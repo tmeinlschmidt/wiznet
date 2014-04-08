@@ -1,0 +1,3100 @@
+
+W5500_Bare_Metal.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00001070  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000042  00802000  00001070  00001104  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          0000000b  00802042  00802042  00001146  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00001146  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000448  00000000  00000000  00001178  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00009bdc  00000000  00000000  000015c0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00001d59  00000000  00000000  0000b19c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000068da  00000000  00000000  0000cef5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000db8  00000000  00000000  000137d0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0002ac5a  00000000  00000000  00014588  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00004b62  00000000  00000000  0003f1e2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 000003a0  00000000  00000000  00043d44  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_macro  0000b555  00000000  00000000  000440e4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+       0:	65 c0       	rjmp	.+202    	; 0xcc <__ctors_end>
+       2:	00 00       	nop
+       4:	7e c0       	rjmp	.+252    	; 0x102 <__bad_interrupt>
+       6:	00 00       	nop
+       8:	7c c0       	rjmp	.+248    	; 0x102 <__bad_interrupt>
+       a:	00 00       	nop
+       c:	7a c0       	rjmp	.+244    	; 0x102 <__bad_interrupt>
+       e:	00 00       	nop
+      10:	78 c0       	rjmp	.+240    	; 0x102 <__bad_interrupt>
+      12:	00 00       	nop
+      14:	76 c0       	rjmp	.+236    	; 0x102 <__bad_interrupt>
+      16:	00 00       	nop
+      18:	74 c0       	rjmp	.+232    	; 0x102 <__bad_interrupt>
+      1a:	00 00       	nop
+      1c:	72 c0       	rjmp	.+228    	; 0x102 <__bad_interrupt>
+      1e:	00 00       	nop
+      20:	70 c0       	rjmp	.+224    	; 0x102 <__bad_interrupt>
+      22:	00 00       	nop
+      24:	6e c0       	rjmp	.+220    	; 0x102 <__bad_interrupt>
+      26:	00 00       	nop
+      28:	6c c0       	rjmp	.+216    	; 0x102 <__bad_interrupt>
+      2a:	00 00       	nop
+      2c:	6a c0       	rjmp	.+212    	; 0x102 <__bad_interrupt>
+      2e:	00 00       	nop
+      30:	68 c0       	rjmp	.+208    	; 0x102 <__bad_interrupt>
+      32:	00 00       	nop
+      34:	66 c0       	rjmp	.+204    	; 0x102 <__bad_interrupt>
+      36:	00 00       	nop
+      38:	64 c0       	rjmp	.+200    	; 0x102 <__bad_interrupt>
+      3a:	00 00       	nop
+      3c:	62 c0       	rjmp	.+196    	; 0x102 <__bad_interrupt>
+      3e:	00 00       	nop
+      40:	60 c0       	rjmp	.+192    	; 0x102 <__bad_interrupt>
+      42:	00 00       	nop
+      44:	5e c0       	rjmp	.+188    	; 0x102 <__bad_interrupt>
+      46:	00 00       	nop
+      48:	5c c0       	rjmp	.+184    	; 0x102 <__bad_interrupt>
+      4a:	00 00       	nop
+      4c:	5a c0       	rjmp	.+180    	; 0x102 <__bad_interrupt>
+      4e:	00 00       	nop
+      50:	58 c0       	rjmp	.+176    	; 0x102 <__bad_interrupt>
+      52:	00 00       	nop
+      54:	56 c0       	rjmp	.+172    	; 0x102 <__bad_interrupt>
+      56:	00 00       	nop
+      58:	54 c0       	rjmp	.+168    	; 0x102 <__bad_interrupt>
+      5a:	00 00       	nop
+      5c:	52 c0       	rjmp	.+164    	; 0x102 <__bad_interrupt>
+      5e:	00 00       	nop
+      60:	50 c0       	rjmp	.+160    	; 0x102 <__bad_interrupt>
+      62:	00 00       	nop
+      64:	4e c0       	rjmp	.+156    	; 0x102 <__bad_interrupt>
+      66:	00 00       	nop
+      68:	4c c0       	rjmp	.+152    	; 0x102 <__bad_interrupt>
+      6a:	00 00       	nop
+      6c:	4a c0       	rjmp	.+148    	; 0x102 <__bad_interrupt>
+      6e:	00 00       	nop
+      70:	48 c0       	rjmp	.+144    	; 0x102 <__bad_interrupt>
+      72:	00 00       	nop
+      74:	46 c0       	rjmp	.+140    	; 0x102 <__bad_interrupt>
+      76:	00 00       	nop
+      78:	44 c0       	rjmp	.+136    	; 0x102 <__bad_interrupt>
+      7a:	00 00       	nop
+      7c:	42 c0       	rjmp	.+132    	; 0x102 <__bad_interrupt>
+      7e:	00 00       	nop
+      80:	40 c0       	rjmp	.+128    	; 0x102 <__bad_interrupt>
+      82:	00 00       	nop
+      84:	3e c0       	rjmp	.+124    	; 0x102 <__bad_interrupt>
+      86:	00 00       	nop
+      88:	3c c0       	rjmp	.+120    	; 0x102 <__bad_interrupt>
+      8a:	00 00       	nop
+      8c:	3a c0       	rjmp	.+116    	; 0x102 <__bad_interrupt>
+      8e:	00 00       	nop
+      90:	38 c0       	rjmp	.+112    	; 0x102 <__bad_interrupt>
+      92:	00 00       	nop
+      94:	36 c0       	rjmp	.+108    	; 0x102 <__bad_interrupt>
+      96:	00 00       	nop
+      98:	34 c0       	rjmp	.+104    	; 0x102 <__bad_interrupt>
+      9a:	00 00       	nop
+      9c:	32 c0       	rjmp	.+100    	; 0x102 <__bad_interrupt>
+      9e:	00 00       	nop
+      a0:	31 c0       	rjmp	.+98     	; 0x104 <__vector_40>
+      a2:	00 00       	nop
+      a4:	2e c0       	rjmp	.+92     	; 0x102 <__bad_interrupt>
+      a6:	00 00       	nop
+      a8:	2c c0       	rjmp	.+88     	; 0x102 <__bad_interrupt>
+      aa:	00 00       	nop
+      ac:	76 06       	cpc	r7, r22
+      ae:	78 06       	cpc	r7, r24
+      b0:	88 06       	cpc	r8, r24
+      b2:	84 06       	cpc	r8, r20
+      b4:	8a 06       	cpc	r8, r26
+      b6:	8e 06       	cpc	r8, r30
+      b8:	92 06       	cpc	r9, r18
+      ba:	9f 06       	cpc	r9, r31
+      bc:	b3 06       	cpc	r11, r19
+      be:	c4 06       	cpc	r12, r20
+      c0:	c6 06       	cpc	r12, r22
+      c2:	c9 06       	cpc	r12, r25
+      c4:	d9 06       	cpc	r13, r25
+      c6:	cc 06       	cpc	r12, r28
+      c8:	d1 06       	cpc	r13, r17
+      ca:	d6 06       	cpc	r13, r22
+
+000000cc <__ctors_end>:
+      cc:	11 24       	eor	r1, r1
+      ce:	1f be       	out	0x3f, r1	; 63
+      d0:	cf ef       	ldi	r28, 0xFF	; 255
+      d2:	cd bf       	out	0x3d, r28	; 61
+      d4:	d3 e2       	ldi	r29, 0x23	; 35
+      d6:	de bf       	out	0x3e, r29	; 62
+
+000000d8 <__do_copy_data>:
+      d8:	10 e2       	ldi	r17, 0x20	; 32
+      da:	a0 e0       	ldi	r26, 0x00	; 0
+      dc:	b0 e2       	ldi	r27, 0x20	; 32
+      de:	e0 e7       	ldi	r30, 0x70	; 112
+      e0:	f0 e1       	ldi	r31, 0x10	; 16
+      e2:	02 c0       	rjmp	.+4      	; 0xe8 <__do_copy_data+0x10>
+      e4:	05 90       	lpm	r0, Z+
+      e6:	0d 92       	st	X+, r0
+      e8:	a2 34       	cpi	r26, 0x42	; 66
+      ea:	b1 07       	cpc	r27, r17
+      ec:	d9 f7       	brne	.-10     	; 0xe4 <__do_copy_data+0xc>
+
+000000ee <__do_clear_bss>:
+      ee:	20 e2       	ldi	r18, 0x20	; 32
+      f0:	a2 e4       	ldi	r26, 0x42	; 66
+      f2:	b0 e2       	ldi	r27, 0x20	; 32
+      f4:	01 c0       	rjmp	.+2      	; 0xf8 <.do_clear_bss_start>
+
+000000f6 <.do_clear_bss_loop>:
+      f6:	1d 92       	st	X+, r1
+
+000000f8 <.do_clear_bss_start>:
+      f8:	ad 34       	cpi	r26, 0x4D	; 77
+      fa:	b2 07       	cpc	r27, r18
+      fc:	e1 f7       	brne	.-8      	; 0xf6 <.do_clear_bss_loop>
+      fe:	f3 d1       	rcall	.+998    	; 0x4e6 <main>
+     100:	b5 c7       	rjmp	.+3946   	; 0x106c <_exit>
+
+00000102 <__bad_interrupt>:
+     102:	e7 c1       	rjmp	.+974    	; 0x4d2 <__vector_default>
+
+00000104 <__vector_40>:
+	cpu_irq_enable();
+}
+
+
+void usart_loopback(void)
+{
+     104:	1f 92       	push	r1
+     106:	0f 92       	push	r0
+     108:	0f b6       	in	r0, 0x3f	; 63
+     10a:	0f 92       	push	r0
+     10c:	11 24       	eor	r1, r1
+     10e:	2f 93       	push	r18
+     110:	3f 93       	push	r19
+     112:	4f 93       	push	r20
+     114:	5f 93       	push	r21
+     116:	6f 93       	push	r22
+     118:	7f 93       	push	r23
+     11a:	8f 93       	push	r24
+     11c:	9f 93       	push	r25
+     11e:	af 93       	push	r26
+     120:	bf 93       	push	r27
+     122:	ef 93       	push	r30
+     124:	ff 93       	push	r31
+     126:	80 ec       	ldi	r24, 0xC0	; 192
+     128:	99 e0       	ldi	r25, 0x09	; 9
+     12a:	a5 d0       	rcall	.+330    	; 0x276 <usart_getchar>
+     12c:	68 2f       	mov	r22, r24
+     12e:	80 ec       	ldi	r24, 0xC0	; 192
+     130:	99 e0       	ldi	r25, 0x09	; 9
+     132:	99 d0       	rcall	.+306    	; 0x266 <usart_putchar>
+     134:	ff 91       	pop	r31
+     136:	ef 91       	pop	r30
+     138:	bf 91       	pop	r27
+     13a:	af 91       	pop	r26
+     13c:	9f 91       	pop	r25
+     13e:	8f 91       	pop	r24
+     140:	7f 91       	pop	r23
+     142:	6f 91       	pop	r22
+     144:	5f 91       	pop	r21
+     146:	4f 91       	pop	r20
+     148:	3f 91       	pop	r19
+     14a:	2f 91       	pop	r18
+     14c:	0f 90       	pop	r0
+     14e:	0f be       	out	0x3f, r0	; 63
+     150:	0f 90       	pop	r0
+     152:	1f 90       	pop	r1
+     154:	18 95       	reti
+
+00000156 <usart_setup>:
+     156:	60 e1       	ldi	r22, 0x10	; 16
+     158:	84 e0       	ldi	r24, 0x04	; 4
+     15a:	44 d7       	rcall	.+3720   	; 0xfe4 <sysclk_enable_module>
+     15c:	60 e0       	ldi	r22, 0x00	; 0
+     15e:	70 e2       	ldi	r23, 0x20	; 32
+     160:	80 ec       	ldi	r24, 0xC0	; 192
+     162:	99 e0       	ldi	r25, 0x09	; 9
+     164:	67 d1       	rcall	.+718    	; 0x434 <usart_init_rs232>
+     166:	e0 e6       	ldi	r30, 0x60	; 96
+     168:	f6 e0       	ldi	r31, 0x06	; 6
+     16a:	86 85       	ldd	r24, Z+14	; 0x0e
+     16c:	80 61       	ori	r24, 0x10	; 16
+     16e:	86 87       	std	Z+14, r24	; 0x0e
+     170:	80 e8       	ldi	r24, 0x80	; 128
+     172:	81 83       	std	Z+1, r24	; 0x01
+     174:	80 e4       	ldi	r24, 0x40	; 64
+     176:	82 83       	std	Z+2, r24	; 0x02
+     178:	e0 ea       	ldi	r30, 0xA0	; 160
+     17a:	f0 e0       	ldi	r31, 0x00	; 0
+     17c:	87 e0       	ldi	r24, 0x07	; 7
+     17e:	82 83       	std	Z+2, r24	; 0x02
+     180:	82 81       	ldd	r24, Z+2	; 0x02
+     182:	80 68       	ori	r24, 0x80	; 128
+     184:	82 83       	std	Z+2, r24	; 0x02
+     186:	a0 ec       	ldi	r26, 0xC0	; 192
+     188:	b9 e0       	ldi	r27, 0x09	; 9
+     18a:	12 96       	adiw	r26, 0x02	; 2
+     18c:	8c 91       	ld	r24, X
+     18e:	12 97       	sbiw	r26, 0x02	; 2
+     190:	80 63       	ori	r24, 0x30	; 48
+     192:	12 96       	adiw	r26, 0x02	; 2
+     194:	8c 93       	st	X, r24
+     196:	82 81       	ldd	r24, Z+2	; 0x02
+     198:	84 60       	ori	r24, 0x04	; 4
+     19a:	82 83       	std	Z+2, r24	; 0x02
+     19c:	78 94       	sei
+     19e:	08 95       	ret
+
+000001a0 <usart_sample>:
+	}
+}
+
+void usart_sample()
+{
+	usart_setup();
+     1a0:	da df       	rcall	.-76     	; 0x156 <usart_setup>
+     1a2:	ff cf       	rjmp	.-2      	; 0x1a2 <usart_sample+0x2>
+
+000001a4 <sysclk_enable_peripheral_clock>:
+
+	if (baud_offset != USART_BAUD_UNDEFINED) {
+		(usart)->BAUDCTRLB = (uint8_t)((uint16_t)baudctrl);
+		(usart)->BAUDCTRLA = (uint8_t)((uint16_t)baudctrl >> 8);
+	}
+}
+     1a4:	00 97       	sbiw	r24, 0x00	; 0
+     1a6:	09 f4       	brne	.+2      	; 0x1aa <sysclk_enable_peripheral_clock+0x6>
+     1a8:	5d c0       	rjmp	.+186    	; 0x264 <sysclk_enable_peripheral_clock+0xc0>
+     1aa:	81 15       	cp	r24, r1
+     1ac:	24 e0       	ldi	r18, 0x04	; 4
+     1ae:	92 07       	cpc	r25, r18
+     1b0:	11 f4       	brne	.+4      	; 0x1b6 <sysclk_enable_peripheral_clock+0x12>
+     1b2:	64 e0       	ldi	r22, 0x04	; 4
+     1b4:	55 c0       	rjmp	.+170    	; 0x260 <sysclk_enable_peripheral_clock+0xbc>
+     1b6:	80 38       	cpi	r24, 0x80	; 128
+     1b8:	21 e0       	ldi	r18, 0x01	; 1
+     1ba:	92 07       	cpc	r25, r18
+     1bc:	11 f4       	brne	.+4      	; 0x1c2 <sysclk_enable_peripheral_clock+0x1e>
+     1be:	62 e0       	ldi	r22, 0x02	; 2
+     1c0:	4f c0       	rjmp	.+158    	; 0x260 <sysclk_enable_peripheral_clock+0xbc>
+     1c2:	81 15       	cp	r24, r1
+     1c4:	21 e0       	ldi	r18, 0x01	; 1
+     1c6:	92 07       	cpc	r25, r18
+     1c8:	11 f4       	brne	.+4      	; 0x1ce <sysclk_enable_peripheral_clock+0x2a>
+     1ca:	61 e0       	ldi	r22, 0x01	; 1
+     1cc:	49 c0       	rjmp	.+146    	; 0x260 <sysclk_enable_peripheral_clock+0xbc>
+     1ce:	80 38       	cpi	r24, 0x80	; 128
+     1d0:	23 e0       	ldi	r18, 0x03	; 3
+     1d2:	92 07       	cpc	r25, r18
+     1d4:	11 f4       	brne	.+4      	; 0x1da <sysclk_enable_peripheral_clock+0x36>
+     1d6:	61 e0       	ldi	r22, 0x01	; 1
+     1d8:	0b c0       	rjmp	.+22     	; 0x1f0 <sysclk_enable_peripheral_clock+0x4c>
+     1da:	81 15       	cp	r24, r1
+     1dc:	22 e0       	ldi	r18, 0x02	; 2
+     1de:	92 07       	cpc	r25, r18
+     1e0:	11 f4       	brne	.+4      	; 0x1e6 <sysclk_enable_peripheral_clock+0x42>
+     1e2:	62 e0       	ldi	r22, 0x02	; 2
+     1e4:	05 c0       	rjmp	.+10     	; 0x1f0 <sysclk_enable_peripheral_clock+0x4c>
+     1e6:	81 15       	cp	r24, r1
+     1e8:	23 e0       	ldi	r18, 0x03	; 3
+     1ea:	92 07       	cpc	r25, r18
+     1ec:	19 f4       	brne	.+6      	; 0x1f4 <sysclk_enable_peripheral_clock+0x50>
+     1ee:	64 e0       	ldi	r22, 0x04	; 4
+     1f0:	81 e0       	ldi	r24, 0x01	; 1
+     1f2:	37 c0       	rjmp	.+110    	; 0x262 <sysclk_enable_peripheral_clock+0xbe>
+     1f4:	81 15       	cp	r24, r1
+     1f6:	28 e0       	ldi	r18, 0x08	; 8
+     1f8:	92 07       	cpc	r25, r18
+     1fa:	11 f4       	brne	.+4      	; 0x200 <sysclk_enable_peripheral_clock+0x5c>
+     1fc:	61 e0       	ldi	r22, 0x01	; 1
+     1fe:	2a c0       	rjmp	.+84     	; 0x254 <sysclk_enable_peripheral_clock+0xb0>
+     200:	80 34       	cpi	r24, 0x40	; 64
+     202:	28 e0       	ldi	r18, 0x08	; 8
+     204:	92 07       	cpc	r25, r18
+     206:	11 f4       	brne	.+4      	; 0x20c <sysclk_enable_peripheral_clock+0x68>
+     208:	62 e0       	ldi	r22, 0x02	; 2
+     20a:	24 c0       	rjmp	.+72     	; 0x254 <sysclk_enable_peripheral_clock+0xb0>
+     20c:	80 34       	cpi	r24, 0x40	; 64
+     20e:	29 e0       	ldi	r18, 0x09	; 9
+     210:	92 07       	cpc	r25, r18
+     212:	11 f4       	brne	.+4      	; 0x218 <sysclk_enable_peripheral_clock+0x74>
+     214:	62 e0       	ldi	r22, 0x02	; 2
+     216:	17 c0       	rjmp	.+46     	; 0x246 <sysclk_enable_peripheral_clock+0xa2>
+     218:	80 3b       	cpi	r24, 0xB0	; 176
+     21a:	28 e0       	ldi	r18, 0x08	; 8
+     21c:	92 07       	cpc	r25, r18
+     21e:	11 f4       	brne	.+4      	; 0x224 <sysclk_enable_peripheral_clock+0x80>
+     220:	64 e0       	ldi	r22, 0x04	; 4
+     222:	18 c0       	rjmp	.+48     	; 0x254 <sysclk_enable_peripheral_clock+0xb0>
+     224:	80 3e       	cpi	r24, 0xE0	; 224
+     226:	28 e0       	ldi	r18, 0x08	; 8
+     228:	92 07       	cpc	r25, r18
+     22a:	11 f4       	brne	.+4      	; 0x230 <sysclk_enable_peripheral_clock+0x8c>
+     22c:	68 e0       	ldi	r22, 0x08	; 8
+     22e:	12 c0       	rjmp	.+36     	; 0x254 <sysclk_enable_peripheral_clock+0xb0>
+     230:	80 3c       	cpi	r24, 0xC0	; 192
+     232:	28 e0       	ldi	r18, 0x08	; 8
+     234:	92 07       	cpc	r25, r18
+     236:	11 f4       	brne	.+4      	; 0x23c <sysclk_enable_peripheral_clock+0x98>
+     238:	60 e1       	ldi	r22, 0x10	; 16
+     23a:	0c c0       	rjmp	.+24     	; 0x254 <sysclk_enable_peripheral_clock+0xb0>
+     23c:	80 3c       	cpi	r24, 0xC0	; 192
+     23e:	29 e0       	ldi	r18, 0x09	; 9
+     240:	92 07       	cpc	r25, r18
+     242:	19 f4       	brne	.+6      	; 0x24a <sysclk_enable_peripheral_clock+0xa6>
+     244:	60 e1       	ldi	r22, 0x10	; 16
+     246:	84 e0       	ldi	r24, 0x04	; 4
+     248:	0c c0       	rjmp	.+24     	; 0x262 <sysclk_enable_peripheral_clock+0xbe>
+     24a:	80 38       	cpi	r24, 0x80	; 128
+     24c:	24 e0       	ldi	r18, 0x04	; 4
+     24e:	92 07       	cpc	r25, r18
+     250:	19 f4       	brne	.+6      	; 0x258 <sysclk_enable_peripheral_clock+0xb4>
+     252:	60 e4       	ldi	r22, 0x40	; 64
+     254:	83 e0       	ldi	r24, 0x03	; 3
+     256:	05 c0       	rjmp	.+10     	; 0x262 <sysclk_enable_peripheral_clock+0xbe>
+     258:	80 36       	cpi	r24, 0x60	; 96
+     25a:	94 40       	sbci	r25, 0x04	; 4
+     25c:	19 f4       	brne	.+6      	; 0x264 <sysclk_enable_peripheral_clock+0xc0>
+     25e:	60 e8       	ldi	r22, 0x80	; 128
+     260:	80 e0       	ldi	r24, 0x00	; 0
+     262:	c0 c6       	rjmp	.+3456   	; 0xfe4 <sysclk_enable_module>
+     264:	08 95       	ret
+
+00000266 <usart_putchar>:
+     266:	fc 01       	movw	r30, r24
+     268:	21 81       	ldd	r18, Z+1	; 0x01
+     26a:	25 ff       	sbrs	r18, 5
+     26c:	fc cf       	rjmp	.-8      	; 0x266 <usart_putchar>
+     26e:	60 83       	st	Z, r22
+     270:	80 e0       	ldi	r24, 0x00	; 0
+     272:	90 e0       	ldi	r25, 0x00	; 0
+     274:	08 95       	ret
+
+00000276 <usart_getchar>:
+     276:	fc 01       	movw	r30, r24
+     278:	21 81       	ldd	r18, Z+1	; 0x01
+     27a:	27 ff       	sbrs	r18, 7
+     27c:	fc cf       	rjmp	.-8      	; 0x276 <usart_getchar>
+     27e:	80 81       	ld	r24, Z
+     280:	08 95       	ret
+
+00000282 <usart_set_baudrate>:
+ * \retval true if the hardware supports the baud rate
+ * \retval false if the hardware does not support the baud rate (i.e. it's
+ *               either too high or too low.)
+ */
+bool usart_set_baudrate(USART_t *usart, uint32_t baud, uint32_t cpu_hz)
+{
+     282:	8f 92       	push	r8
+     284:	9f 92       	push	r9
+     286:	af 92       	push	r10
+     288:	bf 92       	push	r11
+     28a:	cf 92       	push	r12
+     28c:	df 92       	push	r13
+     28e:	ef 92       	push	r14
+     290:	ff 92       	push	r15
+     292:	0f 93       	push	r16
+     294:	1f 93       	push	r17
+     296:	cf 93       	push	r28
+     298:	df 93       	push	r29
+     29a:	ec 01       	movw	r28, r24
+     29c:	6a 01       	movw	r12, r20
+     29e:	7b 01       	movw	r14, r22
+     2a0:	48 01       	movw	r8, r16
+     2a2:	59 01       	movw	r10, r18
+
+	/*
+	 * Check if the hardware supports the given baud rate
+	 */
+	/* 8 = (2^0) * 8 * (2^0) = (2^BSCALE_MIN) * 8 * (BSEL_MIN) */
+	max_rate = cpu_hz / 8;
+     2a4:	b9 01       	movw	r22, r18
+     2a6:	a8 01       	movw	r20, r16
+     2a8:	a3 e0       	ldi	r26, 0x03	; 3
+     2aa:	76 95       	lsr	r23
+     2ac:	67 95       	ror	r22
+     2ae:	57 95       	ror	r21
+     2b0:	47 95       	ror	r20
+     2b2:	aa 95       	dec	r26
+     2b4:	d1 f7       	brne	.-12     	; 0x2aa <usart_set_baudrate+0x28>
+	/* 4194304 = (2^7) * 8 * (2^12) = (2^BSCALE_MAX) * 8 * (BSEL_MAX+1) */
+	min_rate = cpu_hz / 4194304;
+     2b6:	d9 01       	movw	r26, r18
+     2b8:	c8 01       	movw	r24, r16
+     2ba:	16 e1       	ldi	r17, 0x16	; 22
+     2bc:	b6 95       	lsr	r27
+     2be:	a7 95       	ror	r26
+     2c0:	97 95       	ror	r25
+     2c2:	87 95       	ror	r24
+     2c4:	1a 95       	dec	r17
+     2c6:	d1 f7       	brne	.-12     	; 0x2bc <usart_set_baudrate+0x3a>
+
+	if (!((usart)->CTRLB & USART_CLK2X_bm)) {
+     2c8:	2b 81       	ldd	r18, Y+3	; 0x03
+     2ca:	22 fd       	sbrc	r18, 2
+     2cc:	08 c0       	rjmp	.+16     	; 0x2de <usart_set_baudrate+0x5c>
+		max_rate /= 2;
+     2ce:	76 95       	lsr	r23
+     2d0:	67 95       	ror	r22
+     2d2:	57 95       	ror	r21
+     2d4:	47 95       	ror	r20
+		min_rate /= 2;
+     2d6:	b6 95       	lsr	r27
+     2d8:	a7 95       	ror	r26
+     2da:	97 95       	ror	r25
+     2dc:	87 95       	ror	r24
+	}
+
+	if ((baud > max_rate) || (baud < min_rate)) {
+     2de:	4c 15       	cp	r20, r12
+     2e0:	5d 05       	cpc	r21, r13
+     2e2:	6e 05       	cpc	r22, r14
+     2e4:	7f 05       	cpc	r23, r15
+     2e6:	08 f4       	brcc	.+2      	; 0x2ea <usart_set_baudrate+0x68>
+     2e8:	97 c0       	rjmp	.+302    	; 0x418 <usart_set_baudrate+0x196>
+     2ea:	c8 16       	cp	r12, r24
+     2ec:	d9 06       	cpc	r13, r25
+     2ee:	ea 06       	cpc	r14, r26
+     2f0:	fb 06       	cpc	r15, r27
+     2f2:	08 f4       	brcc	.+2      	; 0x2f6 <usart_set_baudrate+0x74>
+     2f4:	91 c0       	rjmp	.+290    	; 0x418 <usart_set_baudrate+0x196>
+		return false;
+	}
+
+	/* Check if double speed is enabled. */
+	if (!((usart)->CTRLB & USART_CLK2X_bm)) {
+     2f6:	8b 81       	ldd	r24, Y+3	; 0x03
+     2f8:	82 fd       	sbrc	r24, 2
+     2fa:	04 c0       	rjmp	.+8      	; 0x304 <usart_set_baudrate+0x82>
+		baud *= 2;
+     2fc:	cc 0c       	add	r12, r12
+     2fe:	dd 1c       	adc	r13, r13
+     300:	ee 1c       	adc	r14, r14
+     302:	ff 1c       	adc	r15, r15
+	}
+
+	/* Find the lowest possible exponent. */
+	limit = 0xfffU >> 4;
+	ratio = cpu_hz / baud;
+     304:	c5 01       	movw	r24, r10
+     306:	b4 01       	movw	r22, r8
+     308:	a7 01       	movw	r20, r14
+     30a:	96 01       	movw	r18, r12
+     30c:	87 d6       	rcall	.+3342   	; 0x101c <__udivmodsi4>
+	if (!((usart)->CTRLB & USART_CLK2X_bm)) {
+		baud *= 2;
+	}
+
+	/* Find the lowest possible exponent. */
+	limit = 0xfffU >> 4;
+     30e:	8f ef       	ldi	r24, 0xFF	; 255
+     310:	90 e0       	ldi	r25, 0x00	; 0
+     312:	a0 e0       	ldi	r26, 0x00	; 0
+     314:	b0 e0       	ldi	r27, 0x00	; 0
+	ratio = cpu_hz / baud;
+
+	for (exp = -7; exp < 7; exp++) {
+     316:	19 ef       	ldi	r17, 0xF9	; 249
+		if (ratio < limit) {
+     318:	28 17       	cp	r18, r24
+     31a:	39 07       	cpc	r19, r25
+     31c:	4a 07       	cpc	r20, r26
+     31e:	5b 07       	cpc	r21, r27
+     320:	58 f0       	brcs	.+22     	; 0x338 <usart_set_baudrate+0xb6>
+			break;
+		}
+
+		limit <<= 1;
+     322:	88 0f       	add	r24, r24
+     324:	99 1f       	adc	r25, r25
+     326:	aa 1f       	adc	r26, r26
+     328:	bb 1f       	adc	r27, r27
+
+		if (exp < -3) {
+     32a:	1d 3f       	cpi	r17, 0xFD	; 253
+     32c:	0c f4       	brge	.+2      	; 0x330 <usart_set_baudrate+0xae>
+			limit |= 1;
+     32e:	81 60       	ori	r24, 0x01	; 1
+     330:	1f 5f       	subi	r17, 0xFF	; 255
+
+	/* Find the lowest possible exponent. */
+	limit = 0xfffU >> 4;
+	ratio = cpu_hz / baud;
+
+	for (exp = -7; exp < 7; exp++) {
+     332:	17 30       	cpi	r17, 0x07	; 7
+     334:	89 f7       	brne	.-30     	; 0x318 <usart_set_baudrate+0x96>
+     336:	4b c0       	rjmp	.+150    	; 0x3ce <usart_set_baudrate+0x14c>
+	 * point.
+	 *
+	 * The formula for calculating BSEL is slightly different when exp is
+	 * negative than it is when exp is positive.
+	 */
+	if (exp < 0) {
+     338:	17 ff       	sbrs	r17, 7
+     33a:	49 c0       	rjmp	.+146    	; 0x3ce <usart_set_baudrate+0x14c>
+		/* We are supposed to subtract 1, then apply BSCALE. We want to
+		 * apply BSCALE first, so we need to turn everything inside the
+		 * parenthesis into a single fractional expression.
+		 */
+		cpu_hz -= 8 * baud;
+     33c:	d7 01       	movw	r26, r14
+     33e:	c6 01       	movw	r24, r12
+     340:	03 e0       	ldi	r16, 0x03	; 3
+     342:	88 0f       	add	r24, r24
+     344:	99 1f       	adc	r25, r25
+     346:	aa 1f       	adc	r26, r26
+     348:	bb 1f       	adc	r27, r27
+     34a:	0a 95       	dec	r16
+     34c:	d1 f7       	brne	.-12     	; 0x342 <usart_set_baudrate+0xc0>
+     34e:	88 1a       	sub	r8, r24
+     350:	99 0a       	sbc	r9, r25
+     352:	aa 0a       	sbc	r10, r26
+     354:	bb 0a       	sbc	r11, r27
+     356:	81 2f       	mov	r24, r17
+     358:	99 27       	eor	r25, r25
+     35a:	87 fd       	sbrc	r24, 7
+     35c:	90 95       	com	r25
+		/* If we end up with a left-shift after taking the final
+		 * divide-by-8 into account, do the shift before the divide.
+		 * Otherwise, left-shift the denominator instead (effectively
+		 * resulting in an overall right shift.)
+		 */
+		if (exp <= -3) {
+     35e:	1e 3f       	cpi	r17, 0xFE	; 254
+     360:	e4 f4       	brge	.+56     	; 0x39a <usart_set_baudrate+0x118>
+			div = ((cpu_hz << (-exp - 3)) + baud / 2) / baud;
+     362:	6d ef       	ldi	r22, 0xFD	; 253
+     364:	7f ef       	ldi	r23, 0xFF	; 255
+     366:	68 1b       	sub	r22, r24
+     368:	79 0b       	sbc	r23, r25
+     36a:	a5 01       	movw	r20, r10
+     36c:	94 01       	movw	r18, r8
+     36e:	04 c0       	rjmp	.+8      	; 0x378 <usart_set_baudrate+0xf6>
+     370:	22 0f       	add	r18, r18
+     372:	33 1f       	adc	r19, r19
+     374:	44 1f       	adc	r20, r20
+     376:	55 1f       	adc	r21, r21
+     378:	6a 95       	dec	r22
+     37a:	d2 f7       	brpl	.-12     	; 0x370 <usart_set_baudrate+0xee>
+     37c:	ca 01       	movw	r24, r20
+     37e:	b9 01       	movw	r22, r18
+     380:	46 01       	movw	r8, r12
+     382:	57 01       	movw	r10, r14
+     384:	b6 94       	lsr	r11
+     386:	a7 94       	ror	r10
+     388:	97 94       	ror	r9
+     38a:	87 94       	ror	r8
+     38c:	68 0d       	add	r22, r8
+     38e:	79 1d       	adc	r23, r9
+     390:	8a 1d       	adc	r24, r10
+     392:	9b 1d       	adc	r25, r11
+     394:	a7 01       	movw	r20, r14
+     396:	96 01       	movw	r18, r12
+     398:	18 c0       	rjmp	.+48     	; 0x3ca <usart_set_baudrate+0x148>
+		} else {
+			baud <<= exp + 3;
+     39a:	9c 01       	movw	r18, r24
+     39c:	2d 5f       	subi	r18, 0xFD	; 253
+     39e:	3f 4f       	sbci	r19, 0xFF	; 255
+     3a0:	d7 01       	movw	r26, r14
+     3a2:	c6 01       	movw	r24, r12
+     3a4:	04 c0       	rjmp	.+8      	; 0x3ae <usart_set_baudrate+0x12c>
+     3a6:	88 0f       	add	r24, r24
+     3a8:	99 1f       	adc	r25, r25
+     3aa:	aa 1f       	adc	r26, r26
+     3ac:	bb 1f       	adc	r27, r27
+     3ae:	2a 95       	dec	r18
+     3b0:	d2 f7       	brpl	.-12     	; 0x3a6 <usart_set_baudrate+0x124>
+     3b2:	9c 01       	movw	r18, r24
+     3b4:	ad 01       	movw	r20, r26
+			div = (cpu_hz + baud / 2) / baud;
+     3b6:	bc 01       	movw	r22, r24
+     3b8:	cd 01       	movw	r24, r26
+     3ba:	96 95       	lsr	r25
+     3bc:	87 95       	ror	r24
+     3be:	77 95       	ror	r23
+     3c0:	67 95       	ror	r22
+     3c2:	68 0d       	add	r22, r8
+     3c4:	79 1d       	adc	r23, r9
+     3c6:	8a 1d       	adc	r24, r10
+     3c8:	9b 1d       	adc	r25, r11
+     3ca:	28 d6       	rcall	.+3152   	; 0x101c <__udivmodsi4>
+     3cc:	1c c0       	rjmp	.+56     	; 0x406 <usart_set_baudrate+0x184>
+		}
+	} else {
+		/* We will always do a right shift in this case, but we need to
+		 * shift three extra positions because of the divide-by-8.
+		 */
+		baud <<= exp + 3;
+     3ce:	23 e0       	ldi	r18, 0x03	; 3
+     3d0:	21 0f       	add	r18, r17
+     3d2:	d7 01       	movw	r26, r14
+     3d4:	c6 01       	movw	r24, r12
+     3d6:	04 c0       	rjmp	.+8      	; 0x3e0 <usart_set_baudrate+0x15e>
+     3d8:	88 0f       	add	r24, r24
+     3da:	99 1f       	adc	r25, r25
+     3dc:	aa 1f       	adc	r26, r26
+     3de:	bb 1f       	adc	r27, r27
+     3e0:	2a 95       	dec	r18
+     3e2:	d2 f7       	brpl	.-12     	; 0x3d8 <usart_set_baudrate+0x156>
+     3e4:	9c 01       	movw	r18, r24
+     3e6:	ad 01       	movw	r20, r26
+		div = (cpu_hz + baud / 2) / baud - 1;
+     3e8:	bc 01       	movw	r22, r24
+     3ea:	cd 01       	movw	r24, r26
+     3ec:	96 95       	lsr	r25
+     3ee:	87 95       	ror	r24
+     3f0:	77 95       	ror	r23
+     3f2:	67 95       	ror	r22
+     3f4:	68 0d       	add	r22, r8
+     3f6:	79 1d       	adc	r23, r9
+     3f8:	8a 1d       	adc	r24, r10
+     3fa:	9b 1d       	adc	r25, r11
+     3fc:	0f d6       	rcall	.+3102   	; 0x101c <__udivmodsi4>
+     3fe:	21 50       	subi	r18, 0x01	; 1
+     400:	31 09       	sbc	r19, r1
+     402:	41 09       	sbc	r20, r1
+     404:	51 09       	sbc	r21, r1
+	}
+
+	(usart)->BAUDCTRLB = (uint8_t)(((div >> 8) & 0X0F) | (exp << 4));
+     406:	83 2f       	mov	r24, r19
+     408:	8f 70       	andi	r24, 0x0F	; 15
+     40a:	12 95       	swap	r17
+     40c:	10 7f       	andi	r17, 0xF0	; 240
+     40e:	81 2b       	or	r24, r17
+     410:	8f 83       	std	Y+7, r24	; 0x07
+	(usart)->BAUDCTRLA = (uint8_t)div;
+     412:	2e 83       	std	Y+6, r18	; 0x06
+
+	return true;
+     414:	81 e0       	ldi	r24, 0x01	; 1
+     416:	01 c0       	rjmp	.+2      	; 0x41a <usart_set_baudrate+0x198>
+		max_rate /= 2;
+		min_rate /= 2;
+	}
+
+	if ((baud > max_rate) || (baud < min_rate)) {
+		return false;
+     418:	80 e0       	ldi	r24, 0x00	; 0
+
+	(usart)->BAUDCTRLB = (uint8_t)(((div >> 8) & 0X0F) | (exp << 4));
+	(usart)->BAUDCTRLA = (uint8_t)div;
+
+	return true;
+}
+     41a:	df 91       	pop	r29
+     41c:	cf 91       	pop	r28
+     41e:	1f 91       	pop	r17
+     420:	0f 91       	pop	r16
+     422:	ff 90       	pop	r15
+     424:	ef 90       	pop	r14
+     426:	df 90       	pop	r13
+     428:	cf 90       	pop	r12
+     42a:	bf 90       	pop	r11
+     42c:	af 90       	pop	r10
+     42e:	9f 90       	pop	r9
+     430:	8f 90       	pop	r8
+     432:	08 95       	ret
+
+00000434 <usart_init_rs232>:
+ *
+ * \retval true if the initialization was successfull
+ * \retval false if the initialization failed (error in baud rate calculation)
+ */
+bool usart_init_rs232(USART_t *usart, const usart_rs232_options_t *opt)
+{
+     434:	0f 93       	push	r16
+     436:	1f 93       	push	r17
+     438:	cf 93       	push	r28
+     43a:	df 93       	push	r29
+     43c:	ec 01       	movw	r28, r24
+     43e:	8b 01       	movw	r16, r22
+	bool result;
+	sysclk_enable_peripheral_clock(usart);
+     440:	b1 de       	rcall	.-670    	; 0x1a4 <sysclk_enable_peripheral_clock>
+ * - 0x2        : IrDA mode.
+ * - 0x3        : Master SPI mode.
+ */
+static inline void usart_set_mode(USART_t *usart, USART_CMODE_t usartmode)
+{
+	(usart)->CTRLC = ((usart)->CTRLC & (~USART_CMODE_gm)) | usartmode;
+     442:	8c 81       	ldd	r24, Y+4	; 0x04
+     444:	8f 73       	andi	r24, 0x3F	; 63
+     446:	8c 83       	std	Y+4, r24	; 0x04
+ *  \param twoStopBits Enable two stop bit mode. Use bool type.
+ */
+static inline void usart_format_set(USART_t *usart, USART_CHSIZE_t charSize,
+		USART_PMODE_t parityMode, bool twoStopBits)
+{
+	(usart)->CTRLC = (uint8_t)charSize | parityMode
+     448:	f8 01       	movw	r30, r16
+     44a:	84 81       	ldd	r24, Z+4	; 0x04
+     44c:	95 81       	ldd	r25, Z+5	; 0x05
+     44e:	89 2b       	or	r24, r25
+     450:	96 81       	ldd	r25, Z+6	; 0x06
+     452:	99 23       	and	r25, r25
+     454:	11 f0       	breq	.+4      	; 0x45a <usart_init_rs232+0x26>
+     456:	98 e0       	ldi	r25, 0x08	; 8
+     458:	01 c0       	rjmp	.+2      	; 0x45c <usart_init_rs232+0x28>
+     45a:	90 e0       	ldi	r25, 0x00	; 0
+     45c:	89 2b       	or	r24, r25
+     45e:	8c 83       	std	Y+4, r24	; 0x04
+	usart_set_mode(usart, USART_CMODE_ASYNCHRONOUS_gc);
+	usart_format_set(usart, opt->charlength, opt->paritytype,
+			opt->stopbits);
+	result = usart_set_baudrate(usart, opt->baudrate, sysclk_get_per_hz());
+     460:	f8 01       	movw	r30, r16
+     462:	40 81       	ld	r20, Z
+     464:	51 81       	ldd	r21, Z+1	; 0x01
+     466:	62 81       	ldd	r22, Z+2	; 0x02
+     468:	73 81       	ldd	r23, Z+3	; 0x03
+     46a:	00 e0       	ldi	r16, 0x00	; 0
+     46c:	18 e4       	ldi	r17, 0x48	; 72
+     46e:	28 ee       	ldi	r18, 0xE8	; 232
+     470:	31 e0       	ldi	r19, 0x01	; 1
+     472:	ce 01       	movw	r24, r28
+     474:	06 df       	rcall	.-500    	; 0x282 <usart_set_baudrate>
+ *
+ * \param usart Pointer to the USART module.
+ */
+static inline void usart_tx_enable(USART_t *usart)
+{
+	(usart)->CTRLB |= USART_TXEN_bm;
+     476:	9b 81       	ldd	r25, Y+3	; 0x03
+     478:	98 60       	ori	r25, 0x08	; 8
+     47a:	9b 83       	std	Y+3, r25	; 0x03
+ *
+ * \param usart Pointer to the USART module
+ */
+static inline void usart_rx_enable(USART_t *usart)
+{
+	(usart)->CTRLB |= USART_RXEN_bm;
+     47c:	9b 81       	ldd	r25, Y+3	; 0x03
+     47e:	90 61       	ori	r25, 0x10	; 16
+     480:	9b 83       	std	Y+3, r25	; 0x03
+	usart_tx_enable(usart);
+	usart_rx_enable(usart);
+	return result;
+}
+     482:	df 91       	pop	r29
+     484:	cf 91       	pop	r28
+     486:	1f 91       	pop	r17
+     488:	0f 91       	pop	r16
+     48a:	08 95       	ret
+
+0000048c <ioport_set_pin_mode.constprop.0>:
+void SW_Reset(void);
+
+void SW_Reset(void)
+{
+	CCP = CCP_IOREG_gc;
+	RST_CTRL =  RST_SWRST_bm;
+     48c:	e8 2f       	mov	r30, r24
+     48e:	e6 95       	lsr	r30
+     490:	e6 95       	lsr	r30
+     492:	e6 95       	lsr	r30
+     494:	90 e2       	ldi	r25, 0x20	; 32
+     496:	e9 9f       	mul	r30, r25
+     498:	f0 01       	movw	r30, r0
+     49a:	11 24       	eor	r1, r1
+     49c:	e0 5f       	subi	r30, 0xF0	; 240
+     49e:	f9 4f       	sbci	r31, 0xF9	; 249
+     4a0:	87 70       	andi	r24, 0x07	; 7
+     4a2:	e8 0f       	add	r30, r24
+     4a4:	f1 1d       	adc	r31, r1
+     4a6:	9f b7       	in	r25, 0x3f	; 63
+     4a8:	f8 94       	cli
+     4aa:	80 81       	ld	r24, Z
+     4ac:	87 70       	andi	r24, 0x07	; 7
+     4ae:	80 83       	st	Z, r24
+     4b0:	80 81       	ld	r24, Z
+     4b2:	88 61       	ori	r24, 0x18	; 24
+     4b4:	80 83       	st	Z, r24
+     4b6:	9f bf       	out	0x3f, r25	; 63
+     4b8:	08 95       	ret
+
+000004ba <__portable_avr_delay_cycles.constprop.2>:
+     4ba:	85 e5       	ldi	r24, 0x55	; 85
+     4bc:	93 e2       	ldi	r25, 0x23	; 35
+     4be:	a8 e0       	ldi	r26, 0x08	; 8
+     4c0:	b0 e0       	ldi	r27, 0x00	; 0
+     4c2:	01 97       	sbiw	r24, 0x01	; 1
+     4c4:	a1 09       	sbc	r26, r1
+     4c6:	b1 09       	sbc	r27, r1
+     4c8:	00 97       	sbiw	r24, 0x00	; 0
+     4ca:	a1 05       	cpc	r26, r1
+     4cc:	b1 05       	cpc	r27, r1
+     4ce:	c9 f7       	brne	.-14     	; 0x4c2 <__portable_avr_delay_cycles.constprop.2+0x8>
+     4d0:	08 95       	ret
+
+000004d2 <__vector_default>:
+     4d2:	1f 92       	push	r1
+     4d4:	0f 92       	push	r0
+     4d6:	0f b6       	in	r0, 0x3f	; 63
+     4d8:	0f 92       	push	r0
+     4da:	11 24       	eor	r1, r1
+     4dc:	0f 90       	pop	r0
+     4de:	0f be       	out	0x3f, r0	; 63
+     4e0:	0f 90       	pop	r0
+     4e2:	1f 90       	pop	r1
+     4e4:	18 95       	reti
+
+000004e6 <main>:
+}
+
+int main (void)
+{
+     4e6:	cf 93       	push	r28
+     4e8:	df 93       	push	r29
+     4ea:	cd b7       	in	r28, 0x3d	; 61
+     4ec:	de b7       	in	r29, 0x3e	; 62
+     4ee:	67 97       	sbiw	r28, 0x17	; 23
+     4f0:	cd bf       	out	0x3d, r28	; 61
+     4f2:	de bf       	out	0x3e, r29	; 62
+	wiz_NetInfo NetworkConfig = {
+     4f4:	87 e1       	ldi	r24, 0x17	; 23
+     4f6:	eb e1       	ldi	r30, 0x1B	; 27
+     4f8:	f0 e2       	ldi	r31, 0x20	; 32
+     4fa:	de 01       	movw	r26, r28
+     4fc:	11 96       	adiw	r26, 0x01	; 1
+     4fe:	01 90       	ld	r0, Z+
+     500:	0d 92       	st	X+, r0
+     502:	8a 95       	dec	r24
+     504:	e1 f7       	brne	.-8      	; 0x4fe <main+0x18>
+		.gw = {192, 168, 1, 1},
+		.dns = {0,0,0,0},
+	.dhcp = NETINFO_STATIC };
+	
+	
+	board_init();
+     506:	80 d5       	rcall	.+2816   	; 0x1008 <board_init>
+	ioport_init();
+	sysclk_init();
+     508:	45 d5       	rcall	.+2698   	; 0xf94 <sysclk_init>
+	
+
+	
+	
+	cli();
+     50a:	f8 94       	cli
+{
+#ifdef CONFIG_SLEEPMGR_ENABLE
+	uint8_t i;
+
+	for (i = 0; i < SLEEPMGR_NR_OF_MODES - 1; i++) {
+		sleepmgr_locks[i] = 0;
+     50c:	10 92 47 20 	sts	0x2047, r1
+     510:	10 92 48 20 	sts	0x2048, r1
+     514:	10 92 49 20 	sts	0x2049, r1
+     518:	10 92 4a 20 	sts	0x204A, r1
+     51c:	10 92 4b 20 	sts	0x204B, r1
+	}
+	sleepmgr_locks[SLEEPMGR_NR_OF_MODES - 1] = 1;
+     520:	81 e0       	ldi	r24, 0x01	; 1
+     522:	80 93 4c 20 	sts	0x204C, r24
+	PORT_t *base = arch_ioport_pin_to_base(pin);
+
+	if (dir == IOPORT_DIR_OUTPUT) {
+		base->DIRSET = arch_ioport_pin_to_mask(pin);
+	} else if (dir == IOPORT_DIR_INPUT) {
+		base->DIRCLR = arch_ioport_pin_to_mask(pin);
+     526:	98 e0       	ldi	r25, 0x08	; 8
+     528:	90 93 62 06 	sts	0x0662, r25
+     52c:	94 e0       	ldi	r25, 0x04	; 4
+     52e:	90 93 62 06 	sts	0x0662, r25
+     532:	92 e0       	ldi	r25, 0x02	; 2
+     534:	90 93 62 06 	sts	0x0662, r25
+     538:	80 93 62 06 	sts	0x0662, r24
+
+	ioport_set_pin_dir(CF1, IOPORT_DIR_INPUT);
+	ioport_set_pin_dir(CF2, IOPORT_DIR_INPUT);
+	ioport_set_pin_dir(CF3, IOPORT_DIR_INPUT);
+	ioport_set_pin_dir(CF4, IOPORT_DIR_INPUT);
+	ioport_set_pin_mode(CF1, IOPORT_MODE_PULLUP);
+     53c:	8b e1       	ldi	r24, 0x1B	; 27
+     53e:	a6 df       	rcall	.-180    	; 0x48c <ioport_set_pin_mode.constprop.0>
+	ioport_set_pin_mode(CF2, IOPORT_MODE_PULLUP);
+     540:	8a e1       	ldi	r24, 0x1A	; 26
+     542:	a4 df       	rcall	.-184    	; 0x48c <ioport_set_pin_mode.constprop.0>
+	ioport_set_pin_mode(CF3, IOPORT_MODE_PULLUP);
+     544:	89 e1       	ldi	r24, 0x19	; 25
+     546:	a2 df       	rcall	.-188    	; 0x48c <ioport_set_pin_mode.constprop.0>
+	ioport_set_pin_mode(CF4, IOPORT_MODE_PULLUP);
+     548:	88 e1       	ldi	r24, 0x18	; 24
+     54a:	a0 df       	rcall	.-192    	; 0x48c <ioport_set_pin_mode.constprop.0>
+		enum ioport_direction dir)
+{
+	PORT_t *base = arch_ioport_pin_to_base(pin);
+
+	if (dir == IOPORT_DIR_OUTPUT) {
+		base->DIRSET = arch_ioport_pin_to_mask(pin);
+     54c:	10 e2       	ldi	r17, 0x20	; 32
+     54e:	10 93 01 06 	sts	0x0601, r17
+		bool level)
+{
+	PORT_t *base = arch_ioport_pin_to_base(pin);
+
+	if (level) {
+		base->OUTSET = arch_ioport_pin_to_mask(pin);
+     552:	10 93 05 06 	sts	0x0605, r17
+	ioport_set_pin_high(LED);
+	
+	
+
+	
+	delay_ms(100);	
+     556:	b1 df       	rcall	.-158    	; 0x4ba <__portable_avr_delay_cycles.constprop.2>
+     558:	10 93 05 06 	sts	0x0605, r17
+
+ 	ioport_set_pin_high(LED);
+		
+	w55500_init(&NetworkConfig);
+     55c:	ce 01       	movw	r24, r28
+     55e:	01 96       	adiw	r24, 0x01	; 1
+     560:	5f d0       	rcall	.+190    	; 0x620 <w55500_init>
+		
+		//-----------------------------------------------------------------
+		//
+		// This is the LoopBack Demo for TCP/IP
+		//TCP_IP_Loopback();
+		usart_sample();
+     562:	1e de       	rcall	.-964    	; 0x1a0 <usart_sample>
+     564:	fe cf       	rjmp	.-4      	; 0x562 <main+0x7c>
+
+00000566 <chip_deselect_sw>:
+     566:	82 e0       	ldi	r24, 0x02	; 2
+     568:	e0 e4       	ldi	r30, 0x40	; 64
+     56a:	f6 e0       	ldi	r31, 0x06	; 6
+     56c:	85 83       	std	Z+5, r24	; 0x05
+     56e:	08 95       	ret
+
+00000570 <chip_select_sw>:
+	} else {
+		base->OUTCLR = arch_ioport_pin_to_mask(pin);
+     570:	82 e0       	ldi	r24, 0x02	; 2
+     572:	e0 e4       	ldi	r30, 0x40	; 64
+     574:	f6 e0       	ldi	r31, 0x06	; 6
+     576:	86 83       	std	Z+6, r24	; 0x06
+     578:	08 95       	ret
+
+0000057a <spi_write_sw>:
+     57a:	90 e8       	ldi	r25, 0x80	; 128
+     57c:	90 93 46 06 	sts	0x0646, r25
+     580:	98 e0       	ldi	r25, 0x08	; 8
+     582:	90 93 46 06 	sts	0x0646, r25
+		bool level)
+{
+	PORT_t *base = arch_ioport_pin_to_base(pin);
+
+	if (level) {
+		base->OUTSET = arch_ioport_pin_to_mask(pin);
+     586:	20 e8       	ldi	r18, 0x80	; 128
+     588:	38 e0       	ldi	r19, 0x08	; 8
+
+	ioport_set_pin_low(MOSI);			//Set MOSI to a defined level
+	ioport_set_pin_low(SCK);			//Set Clock to a defined level
+	for(uint8_t i=0;i<8;i++)			//8 Bit Transfer
+	{
+		if((wb&0x80)>0)					//We will shift MSB to LSB out, so lets see if MSB is set
+     58a:	87 fd       	sbrc	r24, 7
+     58c:	20 93 45 06 	sts	0x0645, r18
+     590:	30 93 45 06 	sts	0x0645, r19
+	} else {
+		base->OUTCLR = arch_ioport_pin_to_mask(pin);
+     594:	30 93 46 06 	sts	0x0646, r19
+     598:	20 93 46 06 	sts	0x0646, r18
+		
+		ioport_set_pin_high(SCK);		//Toggle Clock, first High
+		ioport_set_pin_low(SCK);		//then Low
+		
+		ioport_set_pin_low(MOSI);		//Set MOSI to a given Level
+		wb=(wb<<1);						//Bitshift for the Datatransfer
+     59c:	88 0f       	add	r24, r24
+     59e:	91 50       	subi	r25, 0x01	; 1
+void  spi_write_sw(uint8_t wb)
+{
+
+	ioport_set_pin_low(MOSI);			//Set MOSI to a defined level
+	ioport_set_pin_low(SCK);			//Set Clock to a defined level
+	for(uint8_t i=0;i<8;i++)			//8 Bit Transfer
+     5a0:	a1 f7       	brne	.-24     	; 0x58a <spi_write_sw+0x10>
+     5a2:	80 e8       	ldi	r24, 0x80	; 128
+     5a4:	80 93 46 06 	sts	0x0646, r24
+     5a8:	88 e0       	ldi	r24, 0x08	; 8
+     5aa:	80 93 46 06 	sts	0x0646, r24
+     5ae:	08 95       	ret
+
+000005b0 <spi_read_sw>:
+     5b0:	80 e8       	ldi	r24, 0x80	; 128
+     5b2:	80 93 46 06 	sts	0x0646, r24
+     5b6:	88 e0       	ldi	r24, 0x08	; 8
+     5b8:	80 93 46 06 	sts	0x0646, r24
+     5bc:	98 e0       	ldi	r25, 0x08	; 8
+}
+
+//Ths reads Data and transmitts simply 0x00 to the device, data will be read back and returnd as 8-Bit Transfer
+uint8_t spi_read_sw()
+{
+	uint8_t spi_reg=0;
+     5be:	80 e0       	ldi	r24, 0x00	; 0
+		bool level)
+{
+	PORT_t *base = arch_ioport_pin_to_base(pin);
+
+	if (level) {
+		base->OUTSET = arch_ioport_pin_to_mask(pin);
+     5c0:	28 e0       	ldi	r18, 0x08	; 8
+	} else {
+		base->OUTCLR = arch_ioport_pin_to_mask(pin);
+     5c2:	30 e8       	ldi	r19, 0x80	; 128
+		bool level)
+{
+	PORT_t *base = arch_ioport_pin_to_base(pin);
+
+	if (level) {
+		base->OUTSET = arch_ioport_pin_to_mask(pin);
+     5c4:	20 93 45 06 	sts	0x0645, r18
+	for(uint8_t i=0;i<8;i++)
+	{
+		
+		
+		ioport_set_pin_high(SCK);
+		spi_reg=(spi_reg<<1);
+     5c8:	88 0f       	add	r24, r24
+
+__always_inline static bool arch_ioport_get_pin_level(ioport_pin_t pin)
+{
+	PORT_t *base = arch_ioport_pin_to_base(pin);
+
+	return base->IN & arch_ioport_pin_to_mask(pin);
+     5ca:	40 91 48 06 	lds	r20, 0x0648
+		
+		
+		if(ioport_get_pin_level(MISO)>0)
+     5ce:	45 fd       	sbrc	r20, 5
+		{
+			spi_reg|=1;
+     5d0:	81 60       	ori	r24, 0x01	; 1
+	PORT_t *base = arch_ioport_pin_to_base(pin);
+
+	if (level) {
+		base->OUTSET = arch_ioport_pin_to_mask(pin);
+	} else {
+		base->OUTCLR = arch_ioport_pin_to_mask(pin);
+     5d2:	30 93 46 06 	sts	0x0646, r19
+     5d6:	20 93 46 06 	sts	0x0646, r18
+     5da:	91 50       	subi	r25, 0x01	; 1
+uint8_t spi_read_sw()
+{
+	uint8_t spi_reg=0;
+	ioport_set_pin_low(MOSI);
+	ioport_set_pin_low(SCK);
+	for(uint8_t i=0;i<8;i++)
+     5dc:	99 f7       	brne	.-26     	; 0x5c4 <spi_read_sw+0x14>
+     5de:	90 e8       	ldi	r25, 0x80	; 128
+     5e0:	90 93 46 06 	sts	0x0646, r25
+     5e4:	98 e0       	ldi	r25, 0x08	; 8
+     5e6:	90 93 46 06 	sts	0x0646, r25
+		
+	}	
+	ioport_set_pin_low(MOSI);
+	ioport_set_pin_low(SCK);
+	return spi_reg;
+}
+     5ea:	08 95       	ret
+
+000005ec <init_ports>:
+		bool level)
+{
+	PORT_t *base = arch_ioport_pin_to_base(pin);
+
+	if (level) {
+		base->OUTSET = arch_ioport_pin_to_mask(pin);
+     5ec:	e0 e4       	ldi	r30, 0x40	; 64
+     5ee:	f6 e0       	ldi	r31, 0x06	; 6
+     5f0:	82 e0       	ldi	r24, 0x02	; 2
+     5f2:	85 83       	std	Z+5, r24	; 0x05
+		enum ioport_direction dir)
+{
+	PORT_t *base = arch_ioport_pin_to_base(pin);
+
+	if (dir == IOPORT_DIR_OUTPUT) {
+		base->DIRSET = arch_ioport_pin_to_mask(pin);
+     5f4:	81 83       	std	Z+1, r24	; 0x01
+     5f6:	88 e0       	ldi	r24, 0x08	; 8
+     5f8:	81 83       	std	Z+1, r24	; 0x01
+     5fa:	80 e8       	ldi	r24, 0x80	; 128
+     5fc:	81 83       	std	Z+1, r24	; 0x01
+	} else if (dir == IOPORT_DIR_INPUT) {
+		base->DIRCLR = arch_ioport_pin_to_mask(pin);
+     5fe:	80 e2       	ldi	r24, 0x20	; 32
+     600:	82 83       	std	Z+2, r24	; 0x02
+     602:	08 95       	ret
+
+00000604 <spi_init_sw>:
+	ioport_set_pin_dir(MISO, IOPORT_DIR_INPUT);
+}
+
+void spi_init_sw(void)
+{
+	init_ports();
+     604:	f3 df       	rcall	.-26     	; 0x5ec <init_ports>
+		bool level)
+{
+	PORT_t *base = arch_ioport_pin_to_base(pin);
+
+	if (level) {
+		base->OUTSET = arch_ioport_pin_to_mask(pin);
+     606:	82 e0       	ldi	r24, 0x02	; 2
+     608:	e0 e4       	ldi	r30, 0x40	; 64
+     60a:	f6 e0       	ldi	r31, 0x06	; 6
+     60c:	85 83       	std	Z+5, r24	; 0x05
+     60e:	08 95       	ret
+
+00000610 <w5500_init_io>:
+     610:	e0 e4       	ldi	r30, 0x40	; 64
+     612:	f6 e0       	ldi	r31, 0x06	; 6
+     614:	80 e4       	ldi	r24, 0x40	; 64
+     616:	81 83       	std	Z+1, r24	; 0x01
+     618:	90 e1       	ldi	r25, 0x10	; 16
+     61a:	92 83       	std	Z+2, r25	; 0x02
+     61c:	85 83       	std	Z+5, r24	; 0x05
+     61e:	08 95       	ret
+
+00000620 <w55500_init>:
+}
+
+
+
+InitResult_t w55500_init(wiz_NetInfo* NetworkConfig)
+{
+     620:	0f 93       	push	r16
+     622:	1f 93       	push	r17
+     624:	cf 93       	push	r28
+     626:	df 93       	push	r29
+     628:	cd b7       	in	r28, 0x3d	; 61
+     62a:	de b7       	in	r29, 0x3e	; 62
+     62c:	61 97       	sbiw	r28, 0x11	; 17
+     62e:	cd bf       	out	0x3d, r28	; 61
+     630:	de bf       	out	0x3e, r29	; 62
+     632:	8c 01       	movw	r16, r24
+	uint8_t tmp;
+	uint8_t memsize[2][8] = {
+     634:	80 e1       	ldi	r24, 0x10	; 16
+     636:	e2 e3       	ldi	r30, 0x32	; 50
+     638:	f0 e2       	ldi	r31, 0x20	; 32
+     63a:	de 01       	movw	r26, r28
+     63c:	11 96       	adiw	r26, 0x01	; 1
+     63e:	01 90       	ld	r0, Z+
+     640:	0d 92       	st	X+, r0
+     642:	8a 95       	dec	r24
+     644:	e1 f7       	brne	.-8      	; 0x63e <w55500_init+0x1e>
+							 {2,2,2,2,2,2,2,2} /* Configure RX Socket Size in kByte*/
+							,{2,2,2,2,2,2,2,2} /* Configure TX Socket Size in kByte*/
+							}; 
+	
+	w5500_init_io();		//Set the additional IOs to the correct value and direction
+     646:	e4 df       	rcall	.-56     	; 0x610 <w5500_init_io>
+	
+	spi_init_sw();			//Init the Software SPI Driver
+     648:	dd df       	rcall	.-70     	; 0x604 <spi_init_sw>
+	/* Critical section callback - No use in this example */
+	//reg_wizchip_cris_cbfunc(0, 0);
+	/* Chip selection call back */
+	#if   _WIZCHIP_IO_MODE_ == _WIZCHIP_IO_MODE_SPI_VDM_
+	reg_wizchip_cs_cbfunc(chip_select_sw, chip_deselect_sw);		//Register Functionpointer for Chipselect in Driver
+     64a:	63 eb       	ldi	r22, 0xB3	; 179
+     64c:	72 e0       	ldi	r23, 0x02	; 2
+     64e:	88 eb       	ldi	r24, 0xB8	; 184
+     650:	92 e0       	ldi	r25, 0x02	; 2
+     652:	5e d1       	rcall	.+700    	; 0x910 <reg_wizchip_cs_cbfunc>
+	#else
+	reg_wizchip_cs_cbfunc(chip_select_sw, chip_deselect_sw);		//Register Functionpointer for Chipselect in Driver
+	#endif
+	#endif
+	/* SPI Read & Write callback function */
+	reg_wizchip_spi_cbfunc(spi_read_sw, spi_write_sw);				//Register Functionpointer for Datatransfers in Driver
+     654:	6d eb       	ldi	r22, 0xBD	; 189
+     656:	72 e0       	ldi	r23, 0x02	; 2
+     658:	88 ed       	ldi	r24, 0xD8	; 216
+     65a:	92 e0       	ldi	r25, 0x02	; 2
+     65c:	74 d1       	rcall	.+744    	; 0x946 <reg_wizchip_spi_cbfunc>
+	//reg_wizchip_cris_cbfunc(enter_critical,exit_critical);		///Use with care !
+	////////////////////////////////////////////////////////////////////////
+
+	
+	/* WIZCHIP SOCKET Buffer initialize */
+	if(ctlwizchip(CW_INIT_WIZCHIP,(void*)memsize) == -1)
+     65e:	be 01       	movw	r22, r28
+     660:	6f 5f       	subi	r22, 0xFF	; 255
+     662:	7f 4f       	sbci	r23, 0xFF	; 255
+     664:	81 e0       	ldi	r24, 0x01	; 1
+     666:	34 d3       	rcall	.+1640   	; 0xcd0 <ctlwizchip>
+     668:	8f 3f       	cpi	r24, 0xFF	; 255
+     66a:	79 f0       	breq	.+30     	; 0x68a <w55500_init+0x6a>
+	{
+		return InitError;	//Init went wrong
+	}
+	
+	/* PHY link status check */
+	if(ctlwizchip(CW_GET_PHYLINK, (void*)&tmp) == -1)
+     66c:	be 01       	movw	r22, r28
+     66e:	6f 5e       	subi	r22, 0xEF	; 239
+     670:	7f 4f       	sbci	r23, 0xFF	; 255
+     672:	8f e0       	ldi	r24, 0x0F	; 15
+     674:	2d d3       	rcall	.+1626   	; 0xcd0 <ctlwizchip>
+     676:	8f 3f       	cpi	r24, 0xFF	; 255
+     678:	51 f0       	breq	.+20     	; 0x68e <w55500_init+0x6e>
+		return PhyError;	//Phy in suspect state
+	}
+	
+	//This is wehre the "Black Magic" happens
+	//
+	ctlnetwork(CN_SET_NETINFO,NetworkConfig);	//Write Config in Chip
+     67a:	b8 01       	movw	r22, r16
+     67c:	80 e0       	ldi	r24, 0x00	; 0
+     67e:	63 d4       	rcall	.+2246   	; 0xf46 <ctlnetwork>
+	ctlnetwork(CN_GET_NETINFO,NetworkConfig);	//Read Config Back
+     680:	b8 01       	movw	r22, r16
+     682:	81 e0       	ldi	r24, 0x01	; 1
+     684:	60 d4       	rcall	.+2240   	; 0xf46 <ctlnetwork>
+	return Okay;								//Return Okay
+     686:	80 e0       	ldi	r24, 0x00	; 0
+     688:	03 c0       	rjmp	.+6      	; 0x690 <w55500_init+0x70>
+
+	
+	/* WIZCHIP SOCKET Buffer initialize */
+	if(ctlwizchip(CW_INIT_WIZCHIP,(void*)memsize) == -1)
+	{
+		return InitError;	//Init went wrong
+     68a:	82 e0       	ldi	r24, 0x02	; 2
+     68c:	01 c0       	rjmp	.+2      	; 0x690 <w55500_init+0x70>
+	}
+	
+	/* PHY link status check */
+	if(ctlwizchip(CW_GET_PHYLINK, (void*)&tmp) == -1)
+	{
+		return PhyError;	//Phy in suspect state
+     68e:	81 e0       	ldi	r24, 0x01	; 1
+	//
+	ctlnetwork(CN_SET_NETINFO,NetworkConfig);	//Write Config in Chip
+	ctlnetwork(CN_GET_NETINFO,NetworkConfig);	//Read Config Back
+	return Okay;								//Return Okay
+	//Black Magic done :-), as you given a pointer to your Network-Config, you'll get the current config back from the chip
+     690:	61 96       	adiw	r28, 0x11	; 17
+     692:	cd bf       	out	0x3d, r28	; 61
+     694:	de bf       	out	0x3e, r29	; 62
+     696:	df 91       	pop	r29
+     698:	cf 91       	pop	r28
+     69a:	1f 91       	pop	r17
+     69c:	0f 91       	pop	r16
+     69e:	08 95       	ret
+
+000006a0 <WIZCHIP_READ>:
+#define _W5500_SPI_FDM_OP_LEN4_     0x03
+
+////////////////////////////////////////////////////
+
+uint8_t  WIZCHIP_READ(uint32_t AddrSel)
+{
+     6a0:	0f 93       	push	r16
+     6a2:	1f 93       	push	r17
+     6a4:	cf 93       	push	r28
+     6a6:	df 93       	push	r29
+     6a8:	00 d0       	rcall	.+0      	; 0x6aa <WIZCHIP_READ+0xa>
+     6aa:	1f 92       	push	r1
+     6ac:	cd b7       	in	r28, 0x3d	; 61
+     6ae:	de b7       	in	r29, 0x3e	; 62
+   uint8_t ret;
+
+   WIZCHIP_CRITICAL_ENTER();
+     6b0:	e0 91 0f 20 	lds	r30, 0x200F
+     6b4:	f0 91 10 20 	lds	r31, 0x2010
+     6b8:	6a 83       	std	Y+2, r22	; 0x02
+     6ba:	79 83       	std	Y+1, r23	; 0x01
+     6bc:	8b 83       	std	Y+3, r24	; 0x03
+     6be:	09 95       	icall
+   WIZCHIP.CS._select();
+     6c0:	e0 91 13 20 	lds	r30, 0x2013
+     6c4:	f0 91 14 20 	lds	r31, 0x2014
+     6c8:	09 95       	icall
+   	   AddrSel |= (_W5500_SPI_READ_ | _W5500_SPI_FDM_OP_LEN1_);
+   #else
+      #error "Unsupported _WIZCHIP_IO_SPI_ in W5500 !!!"
+   #endif
+
+  WIZCHIP.IF.SPI._write_byte((AddrSel & 0x00FF0000) >> 16);
+     6ca:	09 e1       	ldi	r16, 0x19	; 25
+     6cc:	10 e2       	ldi	r17, 0x20	; 32
+     6ce:	d8 01       	movw	r26, r16
+     6d0:	ed 91       	ld	r30, X+
+     6d2:	fc 91       	ld	r31, X
+     6d4:	8b 81       	ldd	r24, Y+3	; 0x03
+     6d6:	09 95       	icall
+  WIZCHIP.IF.SPI._write_byte((AddrSel & 0x0000FF00) >>  8);
+     6d8:	d8 01       	movw	r26, r16
+     6da:	ed 91       	ld	r30, X+
+     6dc:	fc 91       	ld	r31, X
+     6de:	79 81       	ldd	r23, Y+1	; 0x01
+     6e0:	87 2f       	mov	r24, r23
+     6e2:	09 95       	icall
+  WIZCHIP.IF.SPI._write_byte((AddrSel & 0x000000FF) >>  0);
+     6e4:	d8 01       	movw	r26, r16
+     6e6:	ed 91       	ld	r30, X+
+     6e8:	fc 91       	ld	r31, X
+     6ea:	6a 81       	ldd	r22, Y+2	; 0x02
+     6ec:	86 2f       	mov	r24, r22
+     6ee:	09 95       	icall
+   ret = WIZCHIP.IF.SPI._read_byte();
+     6f0:	e0 91 17 20 	lds	r30, 0x2017
+     6f4:	f0 91 18 20 	lds	r31, 0x2018
+     6f8:	09 95       	icall
+   #endif
+#else
+   #error "Unknown _WIZCHIP_IO_MODE_ in W5000. !!!"   
+#endif
+
+   WIZCHIP.CS._deselect();
+     6fa:	e0 91 15 20 	lds	r30, 0x2015
+     6fe:	f0 91 16 20 	lds	r31, 0x2016
+     702:	8b 83       	std	Y+3, r24	; 0x03
+     704:	09 95       	icall
+   WIZCHIP_CRITICAL_EXIT();
+     706:	e0 91 11 20 	lds	r30, 0x2011
+     70a:	f0 91 12 20 	lds	r31, 0x2012
+     70e:	09 95       	icall
+   return ret;
+}
+     710:	8b 81       	ldd	r24, Y+3	; 0x03
+     712:	23 96       	adiw	r28, 0x03	; 3
+     714:	cd bf       	out	0x3d, r28	; 61
+     716:	de bf       	out	0x3e, r29	; 62
+     718:	df 91       	pop	r29
+     71a:	cf 91       	pop	r28
+     71c:	1f 91       	pop	r17
+     71e:	0f 91       	pop	r16
+     720:	08 95       	ret
+
+00000722 <WIZCHIP_WRITE>:
+
+
+void     WIZCHIP_WRITE(uint32_t AddrSel, uint8_t wb )
+{
+     722:	0f 93       	push	r16
+     724:	1f 93       	push	r17
+     726:	cf 93       	push	r28
+     728:	df 93       	push	r29
+     72a:	00 d0       	rcall	.+0      	; 0x72c <WIZCHIP_WRITE+0xa>
+     72c:	00 d0       	rcall	.+0      	; 0x72e <WIZCHIP_WRITE+0xc>
+     72e:	cd b7       	in	r28, 0x3d	; 61
+     730:	de b7       	in	r29, 0x3e	; 62
+    WIZCHIP_CRITICAL_ENTER();
+     732:	e0 91 0f 20 	lds	r30, 0x200F
+     736:	f0 91 10 20 	lds	r31, 0x2010
+     73a:	4c 83       	std	Y+4, r20	; 0x04
+     73c:	6b 83       	std	Y+3, r22	; 0x03
+     73e:	7a 83       	std	Y+2, r23	; 0x02
+     740:	89 83       	std	Y+1, r24	; 0x01
+     742:	09 95       	icall
+    WIZCHIP.CS._select();
+     744:	e0 91 13 20 	lds	r30, 0x2013
+     748:	f0 91 14 20 	lds	r31, 0x2014
+     74c:	09 95       	icall
+   	   AddrSel |= (_W5500_SPI_WRITE_ | _W5500_SPI_FDM_OP_LEN1_);
+   #else
+      #error "Unsupported _WIZCHIP_IO_SPI_ in W5500 !!!"
+   #endif
+
+   WIZCHIP.IF.SPI._write_byte((AddrSel & 0x00FF0000) >> 16);
+     74e:	09 e1       	ldi	r16, 0x19	; 25
+     750:	10 e2       	ldi	r17, 0x20	; 32
+     752:	d8 01       	movw	r26, r16
+     754:	ed 91       	ld	r30, X+
+     756:	fc 91       	ld	r31, X
+     758:	89 81       	ldd	r24, Y+1	; 0x01
+     75a:	09 95       	icall
+   WIZCHIP.IF.SPI._write_byte((AddrSel & 0x0000FF00) >>  8);
+     75c:	d8 01       	movw	r26, r16
+     75e:	ed 91       	ld	r30, X+
+     760:	fc 91       	ld	r31, X
+     762:	7a 81       	ldd	r23, Y+2	; 0x02
+     764:	87 2f       	mov	r24, r23
+     766:	09 95       	icall
+   WIZCHIP.IF.SPI._write_byte((AddrSel & 0x000000FF) >>  0);
+     768:	d8 01       	movw	r26, r16
+     76a:	ed 91       	ld	r30, X+
+     76c:	fc 91       	ld	r31, X
+     76e:	6b 81       	ldd	r22, Y+3	; 0x03
+     770:	86 2f       	mov	r24, r22
+     772:	84 60       	ori	r24, 0x04	; 4
+     774:	09 95       	icall
+   WIZCHIP.IF.SPI._write_byte(wb);
+     776:	d8 01       	movw	r26, r16
+     778:	ed 91       	ld	r30, X+
+     77a:	fc 91       	ld	r31, X
+     77c:	4c 81       	ldd	r20, Y+4	; 0x04
+     77e:	84 2f       	mov	r24, r20
+     780:	09 95       	icall
+   #endif
+#else
+   #error "Unknown _WIZCHIP_IO_MODE_ in W5500. !!!"
+#endif
+
+   WIZCHIP.CS._deselect();
+     782:	e0 91 15 20 	lds	r30, 0x2015
+     786:	f0 91 16 20 	lds	r31, 0x2016
+     78a:	09 95       	icall
+   WIZCHIP_CRITICAL_EXIT();
+     78c:	e0 91 11 20 	lds	r30, 0x2011
+     790:	f0 91 12 20 	lds	r31, 0x2012
+}
+     794:	24 96       	adiw	r28, 0x04	; 4
+     796:	cd bf       	out	0x3d, r28	; 61
+     798:	de bf       	out	0x3e, r29	; 62
+     79a:	df 91       	pop	r29
+     79c:	cf 91       	pop	r28
+     79e:	1f 91       	pop	r17
+     7a0:	0f 91       	pop	r16
+#else
+   #error "Unknown _WIZCHIP_IO_MODE_ in W5500. !!!"
+#endif
+
+   WIZCHIP.CS._deselect();
+   WIZCHIP_CRITICAL_EXIT();
+     7a2:	09 94       	ijmp
+
+000007a4 <WIZCHIP_READ_BUF>:
+}
+
+
+void     WIZCHIP_READ_BUF (uint32_t AddrSel, uint8_t* pBuf, uint16_t len)
+{
+     7a4:	ef 92       	push	r14
+     7a6:	ff 92       	push	r15
+     7a8:	0f 93       	push	r16
+     7aa:	1f 93       	push	r17
+     7ac:	cf 93       	push	r28
+     7ae:	df 93       	push	r29
+     7b0:	cd b7       	in	r28, 0x3d	; 61
+     7b2:	de b7       	in	r29, 0x3e	; 62
+     7b4:	25 97       	sbiw	r28, 0x05	; 5
+     7b6:	cd bf       	out	0x3d, r28	; 61
+     7b8:	de bf       	out	0x3e, r29	; 62
+     7ba:	89 01       	movw	r16, r18
+   uint16_t i = 0;
+   uint16_t j = 0;
+   WIZCHIP_CRITICAL_ENTER();
+     7bc:	e0 91 0f 20 	lds	r30, 0x200F
+     7c0:	f0 91 10 20 	lds	r31, 0x2010
+     7c4:	4c 83       	std	Y+4, r20	; 0x04
+     7c6:	5d 83       	std	Y+5, r21	; 0x05
+     7c8:	6b 83       	std	Y+3, r22	; 0x03
+     7ca:	7a 83       	std	Y+2, r23	; 0x02
+     7cc:	89 83       	std	Y+1, r24	; 0x01
+     7ce:	09 95       	icall
+   WIZCHIP.CS._select();
+     7d0:	e0 91 13 20 	lds	r30, 0x2013
+     7d4:	f0 91 14 20 	lds	r31, 0x2014
+     7d8:	09 95       	icall
+#if( (_WIZCHIP_IO_MODE_ & _WIZCHIP_IO_MODE_SPI_))
+
+   #if  ( _WIZCHIP_IO_MODE_ == _WIZCHIP_IO_MODE_SPI_VDM_ )
+      AddrSel |= (_W5500_SPI_READ_ | _W5500_SPI_VDM_OP_);
+	  //Ugly Byte access, 8Bit micros get sick by this, an even 16Bit ones don't like it
+      WIZCHIP.IF.SPI._write_byte((AddrSel & 0x00FF0000) >> 16);
+     7da:	e0 91 19 20 	lds	r30, 0x2019
+     7de:	f0 91 1a 20 	lds	r31, 0x201A
+     7e2:	89 81       	ldd	r24, Y+1	; 0x01
+     7e4:	09 95       	icall
+      WIZCHIP.IF.SPI._write_byte((AddrSel & 0x0000FF00) >>  8);
+     7e6:	e0 91 19 20 	lds	r30, 0x2019
+     7ea:	f0 91 1a 20 	lds	r31, 0x201A
+     7ee:	7a 81       	ldd	r23, Y+2	; 0x02
+     7f0:	87 2f       	mov	r24, r23
+     7f2:	09 95       	icall
+      WIZCHIP.IF.SPI._write_byte((AddrSel & 0x000000FF) >>  0);
+     7f4:	e0 91 19 20 	lds	r30, 0x2019
+     7f8:	f0 91 1a 20 	lds	r31, 0x201A
+     7fc:	6b 81       	ldd	r22, Y+3	; 0x03
+     7fe:	86 2f       	mov	r24, r22
+     800:	09 95       	icall
+     802:	4c 81       	ldd	r20, Y+4	; 0x04
+     804:	e4 2e       	mov	r14, r20
+     806:	5d 81       	ldd	r21, Y+5	; 0x05
+     808:	f5 2e       	mov	r15, r21
+     80a:	0e 0d       	add	r16, r14
+     80c:	1f 1d       	adc	r17, r15
+      //After address is set read datat out
+	  for(i = 0; i < len; i++,j)
+     80e:	e0 16       	cp	r14, r16
+     810:	f1 06       	cpc	r15, r17
+     812:	49 f0       	breq	.+18     	; 0x826 <WIZCHIP_READ_BUF+0x82>
+        pBuf[i] = WIZCHIP.IF.SPI._read_byte(); //Enter DMA Transfer here
+     814:	e0 91 17 20 	lds	r30, 0x2017
+     818:	f0 91 18 20 	lds	r31, 0x2018
+     81c:	09 95       	icall
+     81e:	d7 01       	movw	r26, r14
+     820:	8d 93       	st	X+, r24
+     822:	7d 01       	movw	r14, r26
+     824:	f4 cf       	rjmp	.-24     	; 0x80e <WIZCHIP_READ_BUF+0x6a>
+   #endif
+#else
+   #error "Unknown _WIZCHIP_IO_MODE_ in W5500. !!!!"
+#endif
+
+   WIZCHIP.CS._deselect();
+     826:	e0 91 15 20 	lds	r30, 0x2015
+     82a:	f0 91 16 20 	lds	r31, 0x2016
+     82e:	09 95       	icall
+   WIZCHIP_CRITICAL_EXIT();
+     830:	e0 91 11 20 	lds	r30, 0x2011
+     834:	f0 91 12 20 	lds	r31, 0x2012
+}
+     838:	25 96       	adiw	r28, 0x05	; 5
+     83a:	cd bf       	out	0x3d, r28	; 61
+     83c:	de bf       	out	0x3e, r29	; 62
+     83e:	df 91       	pop	r29
+     840:	cf 91       	pop	r28
+     842:	1f 91       	pop	r17
+     844:	0f 91       	pop	r16
+     846:	ff 90       	pop	r15
+     848:	ef 90       	pop	r14
+#else
+   #error "Unknown _WIZCHIP_IO_MODE_ in W5500. !!!!"
+#endif
+
+   WIZCHIP.CS._deselect();
+   WIZCHIP_CRITICAL_EXIT();
+     84a:	09 94       	ijmp
+
+0000084c <WIZCHIP_WRITE_BUF>:
+}
+
+void     WIZCHIP_WRITE_BUF(uint32_t AddrSel, uint8_t* pBuf, uint16_t len)
+{
+     84c:	ef 92       	push	r14
+     84e:	ff 92       	push	r15
+     850:	0f 93       	push	r16
+     852:	1f 93       	push	r17
+     854:	cf 93       	push	r28
+     856:	df 93       	push	r29
+     858:	cd b7       	in	r28, 0x3d	; 61
+     85a:	de b7       	in	r29, 0x3e	; 62
+     85c:	25 97       	sbiw	r28, 0x05	; 5
+     85e:	cd bf       	out	0x3d, r28	; 61
+     860:	de bf       	out	0x3e, r29	; 62
+     862:	89 01       	movw	r16, r18
+   uint16_t i = 0;
+   uint16_t j = 0;
+   WIZCHIP_CRITICAL_ENTER();
+     864:	e0 91 0f 20 	lds	r30, 0x200F
+     868:	f0 91 10 20 	lds	r31, 0x2010
+     86c:	4c 83       	std	Y+4, r20	; 0x04
+     86e:	5d 83       	std	Y+5, r21	; 0x05
+     870:	6b 83       	std	Y+3, r22	; 0x03
+     872:	7a 83       	std	Y+2, r23	; 0x02
+     874:	89 83       	std	Y+1, r24	; 0x01
+     876:	09 95       	icall
+   WIZCHIP.CS._select();
+     878:	e0 91 13 20 	lds	r30, 0x2013
+     87c:	f0 91 14 20 	lds	r31, 0x2014
+     880:	09 95       	icall
+
+#if( (_WIZCHIP_IO_MODE_ & _WIZCHIP_IO_MODE_SPI_))
+
+   #if  ( _WIZCHIP_IO_MODE_ == _WIZCHIP_IO_MODE_SPI_VDM_ )
+      AddrSel |= (_W5500_SPI_WRITE_ | _W5500_SPI_VDM_OP_);
+      WIZCHIP.IF.SPI._write_byte((AddrSel & 0x00FF0000) >> 16);
+     882:	e0 91 19 20 	lds	r30, 0x2019
+     886:	f0 91 1a 20 	lds	r31, 0x201A
+     88a:	89 81       	ldd	r24, Y+1	; 0x01
+     88c:	09 95       	icall
+      WIZCHIP.IF.SPI._write_byte((AddrSel & 0x0000FF00) >>  8);
+     88e:	e0 91 19 20 	lds	r30, 0x2019
+     892:	f0 91 1a 20 	lds	r31, 0x201A
+     896:	7a 81       	ldd	r23, Y+2	; 0x02
+     898:	87 2f       	mov	r24, r23
+     89a:	09 95       	icall
+      WIZCHIP.IF.SPI._write_byte((AddrSel & 0x000000FF) >>  0);
+     89c:	e0 91 19 20 	lds	r30, 0x2019
+     8a0:	f0 91 1a 20 	lds	r31, 0x201A
+     8a4:	6b 81       	ldd	r22, Y+3	; 0x03
+     8a6:	86 2f       	mov	r24, r22
+     8a8:	84 60       	ori	r24, 0x04	; 4
+     8aa:	09 95       	icall
+     8ac:	4c 81       	ldd	r20, Y+4	; 0x04
+     8ae:	e4 2e       	mov	r14, r20
+     8b0:	5d 81       	ldd	r21, Y+5	; 0x05
+     8b2:	f5 2e       	mov	r15, r21
+     8b4:	0e 0d       	add	r16, r14
+     8b6:	1f 1d       	adc	r17, r15
+      for(i = 0; i < len; i++,j)
+     8b8:	e0 16       	cp	r14, r16
+     8ba:	f1 06       	cpc	r15, r17
+     8bc:	49 f0       	breq	.+18     	; 0x8d0 <WIZCHIP_WRITE_BUF+0x84>
+         WIZCHIP.IF.SPI._write_byte(pBuf[i]);
+     8be:	e0 91 19 20 	lds	r30, 0x2019
+     8c2:	f0 91 1a 20 	lds	r31, 0x201A
+     8c6:	d7 01       	movw	r26, r14
+     8c8:	8d 91       	ld	r24, X+
+     8ca:	7d 01       	movw	r14, r26
+     8cc:	09 95       	icall
+     8ce:	f4 cf       	rjmp	.-24     	; 0x8b8 <WIZCHIP_WRITE_BUF+0x6c>
+   #endif
+#else
+   #error "Unknown _WIZCHIP_IO_MODE_ in W5500. !!!!"
+#endif
+
+   WIZCHIP.CS._deselect();
+     8d0:	e0 91 15 20 	lds	r30, 0x2015
+     8d4:	f0 91 16 20 	lds	r31, 0x2016
+     8d8:	09 95       	icall
+   WIZCHIP_CRITICAL_EXIT();
+     8da:	e0 91 11 20 	lds	r30, 0x2011
+     8de:	f0 91 12 20 	lds	r31, 0x2012
+}
+     8e2:	25 96       	adiw	r28, 0x05	; 5
+     8e4:	cd bf       	out	0x3d, r28	; 61
+     8e6:	de bf       	out	0x3e, r29	; 62
+     8e8:	df 91       	pop	r29
+     8ea:	cf 91       	pop	r28
+     8ec:	1f 91       	pop	r17
+     8ee:	0f 91       	pop	r16
+     8f0:	ff 90       	pop	r15
+     8f2:	ef 90       	pop	r14
+#else
+   #error "Unknown _WIZCHIP_IO_MODE_ in W5500. !!!!"
+#endif
+
+   WIZCHIP.CS._deselect();
+   WIZCHIP_CRITICAL_EXIT();
+     8f4:	09 94       	ijmp
+
+000008f6 <wizchip_cris_enter>:
+void wizphy_getphystat(wiz_PhyConf* phyconf)
+{
+   uint8_t tmp = getPHYCFGR();
+   phyconf->duplex = (tmp & PHYCFGR_DPX_FULL) ? PHY_DUPLEX_FULL : PHY_DUPLEX_HALF;
+   phyconf->speed  = (tmp & PHYCFGR_SPD_100) ? PHY_SPEED_100 : PHY_SPEED_10;
+}
+     8f6:	08 95       	ret
+
+000008f8 <wizchip_cris_exit>:
+     8f8:	08 95       	ret
+
+000008fa <wizchip_cs_select>:
+     8fa:	08 95       	ret
+
+000008fc <wizchip_cs_deselect>:
+     8fc:	08 95       	ret
+
+000008fe <wizchip_bus_readbyte>:
+     8fe:	fb 01       	movw	r30, r22
+     900:	80 81       	ld	r24, Z
+     902:	08 95       	ret
+
+00000904 <wizchip_bus_writebyte>:
+     904:	fb 01       	movw	r30, r22
+     906:	40 83       	st	Z, r20
+     908:	08 95       	ret
+
+0000090a <wizchip_spi_readbyte>:
+     90a:	80 e0       	ldi	r24, 0x00	; 0
+     90c:	08 95       	ret
+
+0000090e <wizchip_spi_writebyte>:
+     90e:	08 95       	ret
+
+00000910 <reg_wizchip_cs_cbfunc>:
+     910:	00 97       	sbiw	r24, 0x00	; 0
+     912:	19 f0       	breq	.+6      	; 0x91a <reg_wizchip_cs_cbfunc+0xa>
+     914:	61 15       	cp	r22, r1
+     916:	71 05       	cpc	r23, r1
+     918:	69 f4       	brne	.+26     	; 0x934 <reg_wizchip_cs_cbfunc+0x24>
+     91a:	8d e7       	ldi	r24, 0x7D	; 125
+     91c:	94 e0       	ldi	r25, 0x04	; 4
+     91e:	80 93 13 20 	sts	0x2013, r24
+     922:	90 93 14 20 	sts	0x2014, r25
+     926:	8e e7       	ldi	r24, 0x7E	; 126
+     928:	94 e0       	ldi	r25, 0x04	; 4
+     92a:	80 93 15 20 	sts	0x2015, r24
+     92e:	90 93 16 20 	sts	0x2016, r25
+     932:	08 95       	ret
+     934:	80 93 13 20 	sts	0x2013, r24
+     938:	90 93 14 20 	sts	0x2014, r25
+     93c:	60 93 15 20 	sts	0x2015, r22
+     940:	70 93 16 20 	sts	0x2016, r23
+     944:	08 95       	ret
+
+00000946 <reg_wizchip_spi_cbfunc>:
+     946:	20 91 07 20 	lds	r18, 0x2007
+     94a:	30 91 08 20 	lds	r19, 0x2008
+     94e:	31 ff       	sbrs	r19, 1
+     950:	ff cf       	rjmp	.-2      	; 0x950 <reg_wizchip_spi_cbfunc+0xa>
+     952:	00 97       	sbiw	r24, 0x00	; 0
+     954:	19 f0       	breq	.+6      	; 0x95c <reg_wizchip_spi_cbfunc+0x16>
+     956:	61 15       	cp	r22, r1
+     958:	71 05       	cpc	r23, r1
+     95a:	69 f4       	brne	.+26     	; 0x976 <reg_wizchip_spi_cbfunc+0x30>
+     95c:	85 e8       	ldi	r24, 0x85	; 133
+     95e:	94 e0       	ldi	r25, 0x04	; 4
+     960:	80 93 17 20 	sts	0x2017, r24
+     964:	90 93 18 20 	sts	0x2018, r25
+     968:	87 e8       	ldi	r24, 0x87	; 135
+     96a:	94 e0       	ldi	r25, 0x04	; 4
+     96c:	80 93 19 20 	sts	0x2019, r24
+     970:	90 93 1a 20 	sts	0x201A, r25
+     974:	08 95       	ret
+     976:	80 93 17 20 	sts	0x2017, r24
+     97a:	90 93 18 20 	sts	0x2018, r25
+     97e:	60 93 19 20 	sts	0x2019, r22
+     982:	70 93 1a 20 	sts	0x201A, r23
+     986:	08 95       	ret
+
+00000988 <wizchip_sw_reset>:
+     988:	cf 93       	push	r28
+     98a:	df 93       	push	r29
+     98c:	cd b7       	in	r28, 0x3d	; 61
+     98e:	de b7       	in	r29, 0x3e	; 62
+     990:	62 97       	sbiw	r28, 0x12	; 18
+     992:	cd bf       	out	0x3d, r28	; 61
+     994:	de bf       	out	0x3e, r29	; 62
+     996:	26 e0       	ldi	r18, 0x06	; 6
+     998:	30 e0       	ldi	r19, 0x00	; 0
+     99a:	ae 01       	movw	r20, r28
+     99c:	4f 5f       	subi	r20, 0xFF	; 255
+     99e:	5f 4f       	sbci	r21, 0xFF	; 255
+     9a0:	60 e0       	ldi	r22, 0x00	; 0
+     9a2:	79 e0       	ldi	r23, 0x09	; 9
+     9a4:	80 e0       	ldi	r24, 0x00	; 0
+     9a6:	90 e0       	ldi	r25, 0x00	; 0
+     9a8:	fd de       	rcall	.-518    	; 0x7a4 <WIZCHIP_READ_BUF>
+     9aa:	24 e0       	ldi	r18, 0x04	; 4
+     9ac:	30 e0       	ldi	r19, 0x00	; 0
+     9ae:	ae 01       	movw	r20, r28
+     9b0:	41 5f       	subi	r20, 0xF1	; 241
+     9b2:	5f 4f       	sbci	r21, 0xFF	; 255
+     9b4:	60 e0       	ldi	r22, 0x00	; 0
+     9b6:	71 e0       	ldi	r23, 0x01	; 1
+     9b8:	80 e0       	ldi	r24, 0x00	; 0
+     9ba:	90 e0       	ldi	r25, 0x00	; 0
+     9bc:	f3 de       	rcall	.-538    	; 0x7a4 <WIZCHIP_READ_BUF>
+     9be:	24 e0       	ldi	r18, 0x04	; 4
+     9c0:	30 e0       	ldi	r19, 0x00	; 0
+     9c2:	ae 01       	movw	r20, r28
+     9c4:	45 5f       	subi	r20, 0xF5	; 245
+     9c6:	5f 4f       	sbci	r21, 0xFF	; 255
+     9c8:	60 e0       	ldi	r22, 0x00	; 0
+     9ca:	75 e0       	ldi	r23, 0x05	; 5
+     9cc:	80 e0       	ldi	r24, 0x00	; 0
+     9ce:	90 e0       	ldi	r25, 0x00	; 0
+     9d0:	e9 de       	rcall	.-558    	; 0x7a4 <WIZCHIP_READ_BUF>
+     9d2:	24 e0       	ldi	r18, 0x04	; 4
+     9d4:	30 e0       	ldi	r19, 0x00	; 0
+     9d6:	ae 01       	movw	r20, r28
+     9d8:	49 5f       	subi	r20, 0xF9	; 249
+     9da:	5f 4f       	sbci	r21, 0xFF	; 255
+     9dc:	60 e0       	ldi	r22, 0x00	; 0
+     9de:	7f e0       	ldi	r23, 0x0F	; 15
+     9e0:	80 e0       	ldi	r24, 0x00	; 0
+     9e2:	90 e0       	ldi	r25, 0x00	; 0
+     9e4:	df de       	rcall	.-578    	; 0x7a4 <WIZCHIP_READ_BUF>
+     9e6:	40 e8       	ldi	r20, 0x80	; 128
+     9e8:	60 e0       	ldi	r22, 0x00	; 0
+     9ea:	70 e0       	ldi	r23, 0x00	; 0
+     9ec:	cb 01       	movw	r24, r22
+     9ee:	99 de       	rcall	.-718    	; 0x722 <WIZCHIP_WRITE>
+     9f0:	60 e0       	ldi	r22, 0x00	; 0
+     9f2:	70 e0       	ldi	r23, 0x00	; 0
+     9f4:	cb 01       	movw	r24, r22
+     9f6:	54 de       	rcall	.-856    	; 0x6a0 <WIZCHIP_READ>
+     9f8:	26 e0       	ldi	r18, 0x06	; 6
+     9fa:	30 e0       	ldi	r19, 0x00	; 0
+     9fc:	ae 01       	movw	r20, r28
+     9fe:	4f 5f       	subi	r20, 0xFF	; 255
+     a00:	5f 4f       	sbci	r21, 0xFF	; 255
+     a02:	60 e0       	ldi	r22, 0x00	; 0
+     a04:	79 e0       	ldi	r23, 0x09	; 9
+     a06:	80 e0       	ldi	r24, 0x00	; 0
+     a08:	90 e0       	ldi	r25, 0x00	; 0
+     a0a:	20 df       	rcall	.-448    	; 0x84c <WIZCHIP_WRITE_BUF>
+     a0c:	24 e0       	ldi	r18, 0x04	; 4
+     a0e:	30 e0       	ldi	r19, 0x00	; 0
+     a10:	ae 01       	movw	r20, r28
+     a12:	41 5f       	subi	r20, 0xF1	; 241
+     a14:	5f 4f       	sbci	r21, 0xFF	; 255
+     a16:	60 e0       	ldi	r22, 0x00	; 0
+     a18:	71 e0       	ldi	r23, 0x01	; 1
+     a1a:	80 e0       	ldi	r24, 0x00	; 0
+     a1c:	90 e0       	ldi	r25, 0x00	; 0
+     a1e:	16 df       	rcall	.-468    	; 0x84c <WIZCHIP_WRITE_BUF>
+     a20:	24 e0       	ldi	r18, 0x04	; 4
+     a22:	30 e0       	ldi	r19, 0x00	; 0
+     a24:	ae 01       	movw	r20, r28
+     a26:	45 5f       	subi	r20, 0xF5	; 245
+     a28:	5f 4f       	sbci	r21, 0xFF	; 255
+     a2a:	60 e0       	ldi	r22, 0x00	; 0
+     a2c:	75 e0       	ldi	r23, 0x05	; 5
+     a2e:	80 e0       	ldi	r24, 0x00	; 0
+     a30:	90 e0       	ldi	r25, 0x00	; 0
+     a32:	0c df       	rcall	.-488    	; 0x84c <WIZCHIP_WRITE_BUF>
+     a34:	24 e0       	ldi	r18, 0x04	; 4
+     a36:	30 e0       	ldi	r19, 0x00	; 0
+     a38:	ae 01       	movw	r20, r28
+     a3a:	49 5f       	subi	r20, 0xF9	; 249
+     a3c:	5f 4f       	sbci	r21, 0xFF	; 255
+     a3e:	60 e0       	ldi	r22, 0x00	; 0
+     a40:	7f e0       	ldi	r23, 0x0F	; 15
+     a42:	80 e0       	ldi	r24, 0x00	; 0
+     a44:	90 e0       	ldi	r25, 0x00	; 0
+     a46:	02 df       	rcall	.-508    	; 0x84c <WIZCHIP_WRITE_BUF>
+     a48:	62 96       	adiw	r28, 0x12	; 18
+     a4a:	cd bf       	out	0x3d, r28	; 61
+     a4c:	de bf       	out	0x3e, r29	; 62
+     a4e:	df 91       	pop	r29
+     a50:	cf 91       	pop	r28
+     a52:	08 95       	ret
+
+00000a54 <wizchip_init>:
+     a54:	ef 92       	push	r14
+     a56:	ff 92       	push	r15
+     a58:	0f 93       	push	r16
+     a5a:	1f 93       	push	r17
+     a5c:	cf 93       	push	r28
+     a5e:	df 93       	push	r29
+     a60:	ec 01       	movw	r28, r24
+     a62:	8b 01       	movw	r16, r22
+     a64:	91 df       	rcall	.-222    	; 0x988 <wizchip_sw_reset>
+     a66:	20 97       	sbiw	r28, 0x00	; 0
+     a68:	21 f4       	brne	.+8      	; 0xa72 <wizchip_init+0x1e>
+     a6a:	01 15       	cp	r16, r1
+     a6c:	11 05       	cpc	r17, r1
+     a6e:	19 f5       	brne	.+70     	; 0xab6 <wizchip_init+0x62>
+     a70:	41 c0       	rjmp	.+130    	; 0xaf4 <wizchip_init+0xa0>
+     a72:	fe 01       	movw	r30, r28
+     a74:	98 e0       	ldi	r25, 0x08	; 8
+     a76:	80 e0       	ldi	r24, 0x00	; 0
+     a78:	21 91       	ld	r18, Z+
+     a7a:	82 0f       	add	r24, r18
+     a7c:	91 50       	subi	r25, 0x01	; 1
+     a7e:	e1 f7       	brne	.-8      	; 0xa78 <wizchip_init+0x24>
+     a80:	81 31       	cpi	r24, 0x11	; 17
+     a82:	14 f0       	brlt	.+4      	; 0xa88 <wizchip_init+0x34>
+     a84:	8f ef       	ldi	r24, 0xFF	; 255
+     a86:	37 c0       	rjmp	.+110    	; 0xaf6 <wizchip_init+0xa2>
+     a88:	7e 01       	movw	r14, r28
+     a8a:	c1 e0       	ldi	r28, 0x01	; 1
+     a8c:	d0 e0       	ldi	r29, 0x00	; 0
+     a8e:	f7 01       	movw	r30, r14
+     a90:	41 91       	ld	r20, Z+
+     a92:	7f 01       	movw	r14, r30
+     a94:	be 01       	movw	r22, r28
+     a96:	93 e0       	ldi	r25, 0x03	; 3
+     a98:	66 0f       	add	r22, r22
+     a9a:	77 1f       	adc	r23, r23
+     a9c:	9a 95       	dec	r25
+     a9e:	e1 f7       	brne	.-8      	; 0xa98 <wizchip_init+0x44>
+     aa0:	71 5e       	subi	r23, 0xE1	; 225
+     aa2:	88 27       	eor	r24, r24
+     aa4:	77 fd       	sbrc	r23, 7
+     aa6:	80 95       	com	r24
+     aa8:	98 2f       	mov	r25, r24
+     aaa:	3b de       	rcall	.-906    	; 0x722 <WIZCHIP_WRITE>
+     aac:	24 96       	adiw	r28, 0x04	; 4
+     aae:	c1 32       	cpi	r28, 0x21	; 33
+     ab0:	d1 05       	cpc	r29, r1
+     ab2:	69 f7       	brne	.-38     	; 0xa8e <wizchip_init+0x3a>
+     ab4:	da cf       	rjmp	.-76     	; 0xa6a <wizchip_init+0x16>
+     ab6:	f8 01       	movw	r30, r16
+     ab8:	80 e0       	ldi	r24, 0x00	; 0
+     aba:	90 e0       	ldi	r25, 0x00	; 0
+     abc:	21 91       	ld	r18, Z+
+     abe:	82 0f       	add	r24, r18
+     ac0:	9f 5f       	subi	r25, 0xFF	; 255
+     ac2:	98 30       	cpi	r25, 0x08	; 8
+     ac4:	d9 f7       	brne	.-10     	; 0xabc <wizchip_init+0x68>
+     ac6:	81 31       	cpi	r24, 0x11	; 17
+     ac8:	ec f6       	brge	.-70     	; 0xa84 <wizchip_init+0x30>
+     aca:	c1 e0       	ldi	r28, 0x01	; 1
+     acc:	d0 e0       	ldi	r29, 0x00	; 0
+     ace:	f8 01       	movw	r30, r16
+     ad0:	41 91       	ld	r20, Z+
+     ad2:	8f 01       	movw	r16, r30
+     ad4:	be 01       	movw	r22, r28
+     ad6:	83 e0       	ldi	r24, 0x03	; 3
+     ad8:	66 0f       	add	r22, r22
+     ada:	77 1f       	adc	r23, r23
+     adc:	8a 95       	dec	r24
+     ade:	e1 f7       	brne	.-8      	; 0xad8 <wizchip_init+0x84>
+     ae0:	72 5e       	subi	r23, 0xE2	; 226
+     ae2:	88 27       	eor	r24, r24
+     ae4:	77 fd       	sbrc	r23, 7
+     ae6:	80 95       	com	r24
+     ae8:	98 2f       	mov	r25, r24
+     aea:	1b de       	rcall	.-970    	; 0x722 <WIZCHIP_WRITE>
+     aec:	24 96       	adiw	r28, 0x04	; 4
+     aee:	c1 32       	cpi	r28, 0x21	; 33
+     af0:	d1 05       	cpc	r29, r1
+     af2:	69 f7       	brne	.-38     	; 0xace <wizchip_init+0x7a>
+     af4:	80 e0       	ldi	r24, 0x00	; 0
+     af6:	df 91       	pop	r29
+     af8:	cf 91       	pop	r28
+     afa:	1f 91       	pop	r17
+     afc:	0f 91       	pop	r16
+     afe:	ff 90       	pop	r15
+     b00:	ef 90       	pop	r14
+     b02:	08 95       	ret
+
+00000b04 <wizchip_clrinterrupt>:
+     b04:	cf 93       	push	r28
+     b06:	c9 2f       	mov	r28, r25
+     b08:	48 2f       	mov	r20, r24
+     b0a:	40 7f       	andi	r20, 0xF0	; 240
+     b0c:	60 e0       	ldi	r22, 0x00	; 0
+     b0e:	75 e1       	ldi	r23, 0x15	; 21
+     b10:	80 e0       	ldi	r24, 0x00	; 0
+     b12:	90 e0       	ldi	r25, 0x00	; 0
+     b14:	06 de       	rcall	.-1012   	; 0x722 <WIZCHIP_WRITE>
+     b16:	4c 2f       	mov	r20, r28
+     b18:	60 e0       	ldi	r22, 0x00	; 0
+     b1a:	77 e1       	ldi	r23, 0x17	; 23
+     b1c:	80 e0       	ldi	r24, 0x00	; 0
+     b1e:	90 e0       	ldi	r25, 0x00	; 0
+     b20:	cf 91       	pop	r28
+     b22:	ff cd       	rjmp	.-1026   	; 0x722 <WIZCHIP_WRITE>
+
+00000b24 <wizchip_getinterrupt>:
+     b24:	cf 93       	push	r28
+     b26:	60 e0       	ldi	r22, 0x00	; 0
+     b28:	75 e1       	ldi	r23, 0x15	; 21
+     b2a:	80 e0       	ldi	r24, 0x00	; 0
+     b2c:	90 e0       	ldi	r25, 0x00	; 0
+     b2e:	b8 dd       	rcall	.-1168   	; 0x6a0 <WIZCHIP_READ>
+     b30:	c8 2f       	mov	r28, r24
+     b32:	60 e0       	ldi	r22, 0x00	; 0
+     b34:	77 e1       	ldi	r23, 0x17	; 23
+     b36:	80 e0       	ldi	r24, 0x00	; 0
+     b38:	90 e0       	ldi	r25, 0x00	; 0
+     b3a:	b2 dd       	rcall	.-1180   	; 0x6a0 <WIZCHIP_READ>
+     b3c:	28 2f       	mov	r18, r24
+     b3e:	30 e0       	ldi	r19, 0x00	; 0
+     b40:	92 2f       	mov	r25, r18
+     b42:	88 27       	eor	r24, r24
+     b44:	c0 7f       	andi	r28, 0xF0	; 240
+     b46:	8c 0f       	add	r24, r28
+     b48:	91 1d       	adc	r25, r1
+     b4a:	cf 91       	pop	r28
+     b4c:	08 95       	ret
+
+00000b4e <wizchip_setinterruptmask>:
+     b4e:	cf 93       	push	r28
+     b50:	c9 2f       	mov	r28, r25
+     b52:	48 2f       	mov	r20, r24
+     b54:	60 e0       	ldi	r22, 0x00	; 0
+     b56:	76 e1       	ldi	r23, 0x16	; 22
+     b58:	80 e0       	ldi	r24, 0x00	; 0
+     b5a:	90 e0       	ldi	r25, 0x00	; 0
+     b5c:	e2 dd       	rcall	.-1084   	; 0x722 <WIZCHIP_WRITE>
+     b5e:	4c 2f       	mov	r20, r28
+     b60:	60 e0       	ldi	r22, 0x00	; 0
+     b62:	78 e1       	ldi	r23, 0x18	; 24
+     b64:	80 e0       	ldi	r24, 0x00	; 0
+     b66:	90 e0       	ldi	r25, 0x00	; 0
+     b68:	cf 91       	pop	r28
+     b6a:	db cd       	rjmp	.-1098   	; 0x722 <WIZCHIP_WRITE>
+
+00000b6c <wizchip_getinterruptmask>:
+     b6c:	cf 93       	push	r28
+     b6e:	60 e0       	ldi	r22, 0x00	; 0
+     b70:	76 e1       	ldi	r23, 0x16	; 22
+     b72:	80 e0       	ldi	r24, 0x00	; 0
+     b74:	90 e0       	ldi	r25, 0x00	; 0
+     b76:	94 dd       	rcall	.-1240   	; 0x6a0 <WIZCHIP_READ>
+     b78:	c8 2f       	mov	r28, r24
+     b7a:	60 e0       	ldi	r22, 0x00	; 0
+     b7c:	78 e1       	ldi	r23, 0x18	; 24
+     b7e:	80 e0       	ldi	r24, 0x00	; 0
+     b80:	90 e0       	ldi	r25, 0x00	; 0
+     b82:	8e dd       	rcall	.-1252   	; 0x6a0 <WIZCHIP_READ>
+     b84:	28 2f       	mov	r18, r24
+     b86:	30 e0       	ldi	r19, 0x00	; 0
+     b88:	92 2f       	mov	r25, r18
+     b8a:	88 27       	eor	r24, r24
+     b8c:	8c 0f       	add	r24, r28
+     b8e:	91 1d       	adc	r25, r1
+     b90:	cf 91       	pop	r28
+     b92:	08 95       	ret
+
+00000b94 <wizphy_getphylink>:
+     b94:	60 e0       	ldi	r22, 0x00	; 0
+     b96:	7e e2       	ldi	r23, 0x2E	; 46
+     b98:	80 e0       	ldi	r24, 0x00	; 0
+     b9a:	90 e0       	ldi	r25, 0x00	; 0
+     b9c:	81 dd       	rcall	.-1278   	; 0x6a0 <WIZCHIP_READ>
+     b9e:	81 70       	andi	r24, 0x01	; 1
+     ba0:	08 95       	ret
+
+00000ba2 <wizphy_getphypmode>:
+     ba2:	60 e0       	ldi	r22, 0x00	; 0
+     ba4:	7e e2       	ldi	r23, 0x2E	; 46
+     ba6:	80 e0       	ldi	r24, 0x00	; 0
+     ba8:	90 e0       	ldi	r25, 0x00	; 0
+     baa:	7a dd       	rcall	.-1292   	; 0x6a0 <WIZCHIP_READ>
+     bac:	98 2f       	mov	r25, r24
+     bae:	90 73       	andi	r25, 0x30	; 48
+     bb0:	81 e0       	ldi	r24, 0x01	; 1
+     bb2:	09 f4       	brne	.+2      	; 0xbb6 <wizphy_getphypmode+0x14>
+     bb4:	80 e0       	ldi	r24, 0x00	; 0
+     bb6:	08 95       	ret
+
+00000bb8 <wizphy_reset>:
+     bb8:	60 e0       	ldi	r22, 0x00	; 0
+     bba:	7e e2       	ldi	r23, 0x2E	; 46
+     bbc:	80 e0       	ldi	r24, 0x00	; 0
+     bbe:	90 e0       	ldi	r25, 0x00	; 0
+     bc0:	6f dd       	rcall	.-1314   	; 0x6a0 <WIZCHIP_READ>
+     bc2:	48 2f       	mov	r20, r24
+     bc4:	4f 77       	andi	r20, 0x7F	; 127
+     bc6:	60 e0       	ldi	r22, 0x00	; 0
+     bc8:	7e e2       	ldi	r23, 0x2E	; 46
+     bca:	80 e0       	ldi	r24, 0x00	; 0
+     bcc:	90 e0       	ldi	r25, 0x00	; 0
+     bce:	a9 dd       	rcall	.-1198   	; 0x722 <WIZCHIP_WRITE>
+     bd0:	60 e0       	ldi	r22, 0x00	; 0
+     bd2:	7e e2       	ldi	r23, 0x2E	; 46
+     bd4:	80 e0       	ldi	r24, 0x00	; 0
+     bd6:	90 e0       	ldi	r25, 0x00	; 0
+     bd8:	63 dd       	rcall	.-1338   	; 0x6a0 <WIZCHIP_READ>
+     bda:	48 2f       	mov	r20, r24
+     bdc:	40 68       	ori	r20, 0x80	; 128
+     bde:	60 e0       	ldi	r22, 0x00	; 0
+     be0:	7e e2       	ldi	r23, 0x2E	; 46
+     be2:	80 e0       	ldi	r24, 0x00	; 0
+     be4:	90 e0       	ldi	r25, 0x00	; 0
+     be6:	9d cd       	rjmp	.-1222   	; 0x722 <WIZCHIP_WRITE>
+
+00000be8 <wizphy_setphyconf>:
+     be8:	fc 01       	movw	r30, r24
+     bea:	80 81       	ld	r24, Z
+     bec:	81 30       	cpi	r24, 0x01	; 1
+     bee:	11 f4       	brne	.+4      	; 0xbf4 <wizphy_setphyconf+0xc>
+     bf0:	40 e4       	ldi	r20, 0x40	; 64
+     bf2:	01 c0       	rjmp	.+2      	; 0xbf6 <wizphy_setphyconf+0xe>
+     bf4:	40 e0       	ldi	r20, 0x00	; 0
+     bf6:	81 81       	ldd	r24, Z+1	; 0x01
+     bf8:	81 30       	cpi	r24, 0x01	; 1
+     bfa:	11 f4       	brne	.+4      	; 0xc00 <wizphy_setphyconf+0x18>
+     bfc:	48 63       	ori	r20, 0x38	; 56
+     bfe:	0d c0       	rjmp	.+26     	; 0xc1a <wizphy_setphyconf+0x32>
+     c00:	93 81       	ldd	r25, Z+3	; 0x03
+     c02:	82 81       	ldd	r24, Z+2	; 0x02
+     c04:	91 30       	cpi	r25, 0x01	; 1
+     c06:	31 f4       	brne	.+12     	; 0xc14 <wizphy_setphyconf+0x2c>
+     c08:	81 30       	cpi	r24, 0x01	; 1
+     c0a:	11 f4       	brne	.+4      	; 0xc10 <wizphy_setphyconf+0x28>
+     c0c:	48 61       	ori	r20, 0x18	; 24
+     c0e:	05 c0       	rjmp	.+10     	; 0xc1a <wizphy_setphyconf+0x32>
+     c10:	48 60       	ori	r20, 0x08	; 8
+     c12:	03 c0       	rjmp	.+6      	; 0xc1a <wizphy_setphyconf+0x32>
+     c14:	81 30       	cpi	r24, 0x01	; 1
+     c16:	09 f4       	brne	.+2      	; 0xc1a <wizphy_setphyconf+0x32>
+     c18:	40 61       	ori	r20, 0x10	; 16
+     c1a:	60 e0       	ldi	r22, 0x00	; 0
+     c1c:	7e e2       	ldi	r23, 0x2E	; 46
+     c1e:	80 e0       	ldi	r24, 0x00	; 0
+     c20:	90 e0       	ldi	r25, 0x00	; 0
+     c22:	7f dd       	rcall	.-1282   	; 0x722 <WIZCHIP_WRITE>
+     c24:	c9 cf       	rjmp	.-110    	; 0xbb8 <wizphy_reset>
+
+00000c26 <wizphy_getphyconf>:
+     c26:	cf 93       	push	r28
+     c28:	df 93       	push	r29
+     c2a:	ec 01       	movw	r28, r24
+     c2c:	60 e0       	ldi	r22, 0x00	; 0
+     c2e:	7e e2       	ldi	r23, 0x2E	; 46
+     c30:	80 e0       	ldi	r24, 0x00	; 0
+     c32:	90 e0       	ldi	r25, 0x00	; 0
+     c34:	35 dd       	rcall	.-1430   	; 0x6a0 <WIZCHIP_READ>
+     c36:	86 fb       	bst	r24, 6
+     c38:	99 27       	eor	r25, r25
+     c3a:	90 f9       	bld	r25, 0
+     c3c:	98 83       	st	Y, r25
+     c3e:	88 73       	andi	r24, 0x38	; 56
+     c40:	80 32       	cpi	r24, 0x20	; 32
+     c42:	11 f0       	breq	.+4      	; 0xc48 <wizphy_getphyconf+0x22>
+     c44:	88 33       	cpi	r24, 0x38	; 56
+     c46:	19 f4       	brne	.+6      	; 0xc4e <wizphy_getphyconf+0x28>
+     c48:	91 e0       	ldi	r25, 0x01	; 1
+     c4a:	99 83       	std	Y+1, r25	; 0x01
+     c4c:	01 c0       	rjmp	.+2      	; 0xc50 <wizphy_getphyconf+0x2a>
+     c4e:	19 82       	std	Y+1, r1	; 0x01
+     c50:	88 31       	cpi	r24, 0x18	; 24
+     c52:	21 f0       	breq	.+8      	; 0xc5c <wizphy_getphyconf+0x36>
+     c54:	80 32       	cpi	r24, 0x20	; 32
+     c56:	11 f0       	breq	.+4      	; 0xc5c <wizphy_getphyconf+0x36>
+     c58:	80 31       	cpi	r24, 0x10	; 16
+     c5a:	19 f4       	brne	.+6      	; 0xc62 <wizphy_getphyconf+0x3c>
+     c5c:	91 e0       	ldi	r25, 0x01	; 1
+     c5e:	9a 83       	std	Y+2, r25	; 0x02
+     c60:	01 c0       	rjmp	.+2      	; 0xc64 <wizphy_getphyconf+0x3e>
+     c62:	1a 82       	std	Y+2, r1	; 0x02
+     c64:	88 31       	cpi	r24, 0x18	; 24
+     c66:	21 f0       	breq	.+8      	; 0xc70 <wizphy_getphyconf+0x4a>
+     c68:	80 32       	cpi	r24, 0x20	; 32
+     c6a:	11 f0       	breq	.+4      	; 0xc70 <wizphy_getphyconf+0x4a>
+     c6c:	88 30       	cpi	r24, 0x08	; 8
+     c6e:	19 f4       	brne	.+6      	; 0xc76 <wizphy_getphyconf+0x50>
+     c70:	81 e0       	ldi	r24, 0x01	; 1
+     c72:	8b 83       	std	Y+3, r24	; 0x03
+     c74:	01 c0       	rjmp	.+2      	; 0xc78 <wizphy_getphyconf+0x52>
+     c76:	1b 82       	std	Y+3, r1	; 0x03
+     c78:	df 91       	pop	r29
+     c7a:	cf 91       	pop	r28
+     c7c:	08 95       	ret
+
+00000c7e <wizphy_setphypmode>:
+
+int8_t wizphy_setphypmode(uint8_t pmode)
+{
+     c7e:	cf 93       	push	r28
+     c80:	c8 2f       	mov	r28, r24
+   uint8_t tmp = 0;
+   tmp = getPHYCFGR();
+     c82:	60 e0       	ldi	r22, 0x00	; 0
+     c84:	7e e2       	ldi	r23, 0x2E	; 46
+     c86:	80 e0       	ldi	r24, 0x00	; 0
+     c88:	90 e0       	ldi	r25, 0x00	; 0
+     c8a:	0a dd       	rcall	.-1516   	; 0x6a0 <WIZCHIP_READ>
+   if((tmp & PHYCFGR_OPMD)== 0) return -1;
+     c8c:	86 ff       	sbrs	r24, 6
+     c8e:	1d c0       	rjmp	.+58     	; 0xcca <wizphy_setphypmode+0x4c>
+   tmp &= ~PHYCFGR_OPMDC_ALLA;         
+     c90:	48 2f       	mov	r20, r24
+     c92:	47 7c       	andi	r20, 0xC7	; 199
+   if( pmode == PHY_POWER_DOWN)
+     c94:	c1 30       	cpi	r28, 0x01	; 1
+     c96:	11 f4       	brne	.+4      	; 0xc9c <wizphy_setphypmode+0x1e>
+      tmp |= PHYCFGR_OPMDC_PDOWN;
+     c98:	40 63       	ori	r20, 0x30	; 48
+     c9a:	01 c0       	rjmp	.+2      	; 0xc9e <wizphy_setphypmode+0x20>
+   else
+      tmp |= PHYCFGR_OPMDC_ALLA;
+     c9c:	48 63       	ori	r20, 0x38	; 56
+   setPHYCFGR(tmp);
+     c9e:	60 e0       	ldi	r22, 0x00	; 0
+     ca0:	7e e2       	ldi	r23, 0x2E	; 46
+     ca2:	80 e0       	ldi	r24, 0x00	; 0
+     ca4:	90 e0       	ldi	r25, 0x00	; 0
+     ca6:	3d dd       	rcall	.-1414   	; 0x722 <WIZCHIP_WRITE>
+   wizphy_reset();
+     ca8:	87 df       	rcall	.-242    	; 0xbb8 <wizphy_reset>
+   tmp = getPHYCFGR();
+     caa:	60 e0       	ldi	r22, 0x00	; 0
+     cac:	7e e2       	ldi	r23, 0x2E	; 46
+     cae:	80 e0       	ldi	r24, 0x00	; 0
+     cb0:	90 e0       	ldi	r25, 0x00	; 0
+     cb2:	f6 dc       	rcall	.-1556   	; 0x6a0 <WIZCHIP_READ>
+   if( pmode == PHY_POWER_DOWN)
+   {
+      if(tmp & PHYCFGR_OPMDC_PDOWN) return 0;
+     cb4:	98 2f       	mov	r25, r24
+   else
+      tmp |= PHYCFGR_OPMDC_ALLA;
+   setPHYCFGR(tmp);
+   wizphy_reset();
+   tmp = getPHYCFGR();
+   if( pmode == PHY_POWER_DOWN)
+     cb6:	c1 30       	cpi	r28, 0x01	; 1
+     cb8:	11 f4       	brne	.+4      	; 0xcbe <wizphy_setphypmode+0x40>
+   {
+      if(tmp & PHYCFGR_OPMDC_PDOWN) return 0;
+     cba:	90 73       	andi	r25, 0x30	; 48
+     cbc:	01 c0       	rjmp	.+2      	; 0xcc0 <wizphy_setphypmode+0x42>
+   }
+   else
+   {
+      if(tmp & PHYCFGR_OPMDC_ALLA) return 0;
+     cbe:	98 73       	andi	r25, 0x38	; 56
+     cc0:	81 e0       	ldi	r24, 0x01	; 1
+     cc2:	91 11       	cpse	r25, r1
+     cc4:	80 e0       	ldi	r24, 0x00	; 0
+     cc6:	81 95       	neg	r24
+     cc8:	01 c0       	rjmp	.+2      	; 0xccc <wizphy_setphypmode+0x4e>
+
+int8_t wizphy_setphypmode(uint8_t pmode)
+{
+   uint8_t tmp = 0;
+   tmp = getPHYCFGR();
+   if((tmp & PHYCFGR_OPMD)== 0) return -1;
+     cca:	8f ef       	ldi	r24, 0xFF	; 255
+   else
+   {
+      if(tmp & PHYCFGR_OPMDC_ALLA) return 0;
+   }
+   return -1;
+}
+     ccc:	cf 91       	pop	r28
+     cce:	08 95       	ret
+
+00000cd0 <ctlwizchip>:
+      WIZCHIP.IF.SPI._write_byte  = spi_wb;
+   }
+}
+
+int8_t ctlwizchip(ctlwizchip_type cwtype, void* arg)
+{
+     cd0:	1f 93       	push	r17
+     cd2:	cf 93       	push	r28
+     cd4:	df 93       	push	r29
+     cd6:	eb 01       	movw	r28, r22
+   uint8_t tmp = 0;
+   uint8_t* ptmp[2] = {0,0};
+   switch(cwtype)
+     cd8:	48 2f       	mov	r20, r24
+     cda:	50 e0       	ldi	r21, 0x00	; 0
+     cdc:	40 31       	cpi	r20, 0x10	; 16
+     cde:	51 05       	cpc	r21, r1
+     ce0:	08 f0       	brcs	.+2      	; 0xce4 <ctlwizchip+0x14>
+     ce2:	62 c0       	rjmp	.+196    	; 0xda8 <ctlwizchip+0xd8>
+     ce4:	fa 01       	movw	r30, r20
+     ce6:	ea 5a       	subi	r30, 0xAA	; 170
+     ce8:	ff 4f       	sbci	r31, 0xFF	; 255
+     cea:	ba c1       	rjmp	.+884    	; 0x1060 <__tablejump2__>
+   {
+      case CW_RESET_WIZCHIP:
+         wizchip_sw_reset();
+     cec:	4d de       	rcall	.-870    	; 0x988 <wizchip_sw_reset>
+     cee:	61 c0       	rjmp	.+194    	; 0xdb2 <ctlwizchip+0xe2>
+         break;
+      case CW_INIT_WIZCHIP:
+         if(arg != 0) 
+     cf0:	20 97       	sbiw	r28, 0x00	; 0
+     cf2:	19 f0       	breq	.+6      	; 0xcfa <ctlwizchip+0x2a>
+         {
+            ptmp[0] = (uint8_t*)arg;
+            ptmp[1] = ptmp[0] + _WIZCHIP_SOCK_NUM_;
+     cf4:	68 5f       	subi	r22, 0xF8	; 248
+     cf6:	7f 4f       	sbci	r23, 0xFF	; 255
+     cf8:	02 c0       	rjmp	.+4      	; 0xcfe <ctlwizchip+0x2e>
+}
+
+int8_t ctlwizchip(ctlwizchip_type cwtype, void* arg)
+{
+   uint8_t tmp = 0;
+   uint8_t* ptmp[2] = {0,0};
+     cfa:	60 e0       	ldi	r22, 0x00	; 0
+     cfc:	70 e0       	ldi	r23, 0x00	; 0
+         if(arg != 0) 
+         {
+            ptmp[0] = (uint8_t*)arg;
+            ptmp[1] = ptmp[0] + _WIZCHIP_SOCK_NUM_;
+         }
+         return wizchip_init(ptmp[0], ptmp[1]);;
+     cfe:	ce 01       	movw	r24, r28
+         break;
+      default:
+         return -1;
+   }
+   return 0;
+}
+     d00:	df 91       	pop	r29
+     d02:	cf 91       	pop	r28
+     d04:	1f 91       	pop	r17
+         if(arg != 0) 
+         {
+            ptmp[0] = (uint8_t*)arg;
+            ptmp[1] = ptmp[0] + _WIZCHIP_SOCK_NUM_;
+         }
+         return wizchip_init(ptmp[0], ptmp[1]);;
+     d06:	a6 ce       	rjmp	.-692    	; 0xa54 <wizchip_init>
+      case CW_CLR_INTERRUPT:
+         wizchip_clrinterrupt(*((intr_kind*)arg));
+     d08:	88 81       	ld	r24, Y
+     d0a:	99 81       	ldd	r25, Y+1	; 0x01
+     d0c:	fb de       	rcall	.-522    	; 0xb04 <wizchip_clrinterrupt>
+     d0e:	51 c0       	rjmp	.+162    	; 0xdb2 <ctlwizchip+0xe2>
+         break;
+      case CW_GET_INTERRUPT:
+        *((intr_kind*)arg) = wizchip_getinterrupt();
+     d10:	09 df       	rcall	.-494    	; 0xb24 <wizchip_getinterrupt>
+     d12:	05 c0       	rjmp	.+10     	; 0xd1e <ctlwizchip+0x4e>
+         break;
+      case CW_SET_INTRMASK:
+         wizchip_setinterruptmask(*((intr_kind*)arg));
+     d14:	88 81       	ld	r24, Y
+     d16:	99 81       	ldd	r25, Y+1	; 0x01
+     d18:	1a df       	rcall	.-460    	; 0xb4e <wizchip_setinterruptmask>
+     d1a:	4b c0       	rjmp	.+150    	; 0xdb2 <ctlwizchip+0xe2>
+         break;         
+      case CW_GET_INTRMASK:
+         *((intr_kind*)arg) = wizchip_getinterruptmask();
+     d1c:	27 df       	rcall	.-434    	; 0xb6c <wizchip_getinterruptmask>
+     d1e:	88 83       	st	Y, r24
+     d20:	99 83       	std	Y+1, r25	; 0x01
+     d22:	47 c0       	rjmp	.+142    	; 0xdb2 <ctlwizchip+0xe2>
+         break;
+   #if _WIZCHIP_ > 5100
+      case CW_SET_INTRTIME:
+         setINTLEVEL(*(uint16_t*)arg);
+     d24:	49 81       	ldd	r20, Y+1	; 0x01
+     d26:	60 e0       	ldi	r22, 0x00	; 0
+     d28:	73 e1       	ldi	r23, 0x13	; 19
+     d2a:	80 e0       	ldi	r24, 0x00	; 0
+     d2c:	90 e0       	ldi	r25, 0x00	; 0
+     d2e:	f9 dc       	rcall	.-1550   	; 0x722 <WIZCHIP_WRITE>
+     d30:	48 81       	ld	r20, Y
+     d32:	60 e0       	ldi	r22, 0x00	; 0
+     d34:	74 e1       	ldi	r23, 0x14	; 20
+     d36:	80 e0       	ldi	r24, 0x00	; 0
+     d38:	90 e0       	ldi	r25, 0x00	; 0
+     d3a:	f3 dc       	rcall	.-1562   	; 0x722 <WIZCHIP_WRITE>
+     d3c:	3a c0       	rjmp	.+116    	; 0xdb2 <ctlwizchip+0xe2>
+         break;
+      case CW_GET_INTRTIME:
+         *(uint16_t*)arg = getINTLEVEL();
+     d3e:	60 e0       	ldi	r22, 0x00	; 0
+     d40:	73 e1       	ldi	r23, 0x13	; 19
+     d42:	80 e0       	ldi	r24, 0x00	; 0
+     d44:	90 e0       	ldi	r25, 0x00	; 0
+     d46:	ac dc       	rcall	.-1704   	; 0x6a0 <WIZCHIP_READ>
+     d48:	18 2f       	mov	r17, r24
+     d4a:	60 e0       	ldi	r22, 0x00	; 0
+     d4c:	74 e1       	ldi	r23, 0x14	; 20
+     d4e:	80 e0       	ldi	r24, 0x00	; 0
+     d50:	90 e0       	ldi	r25, 0x00	; 0
+     d52:	a6 dc       	rcall	.-1716   	; 0x6a0 <WIZCHIP_READ>
+     d54:	21 2f       	mov	r18, r17
+     d56:	30 e0       	ldi	r19, 0x00	; 0
+     d58:	32 2f       	mov	r19, r18
+     d5a:	22 27       	eor	r18, r18
+     d5c:	28 0f       	add	r18, r24
+     d5e:	31 1d       	adc	r19, r1
+     d60:	28 83       	st	Y, r18
+     d62:	39 83       	std	Y+1, r19	; 0x01
+     d64:	26 c0       	rjmp	.+76     	; 0xdb2 <ctlwizchip+0xe2>
+         break;
+   #endif
+      case CW_GET_ID:
+         ((uint8_t*)arg)[0] = WIZCHIP.id[0];
+     d66:	80 91 09 20 	lds	r24, 0x2009
+     d6a:	88 83       	st	Y, r24
+         ((uint8_t*)arg)[1] = WIZCHIP.id[1];
+     d6c:	80 91 0a 20 	lds	r24, 0x200A
+     d70:	89 83       	std	Y+1, r24	; 0x01
+         ((uint8_t*)arg)[2] = WIZCHIP.id[2];
+     d72:	80 91 0b 20 	lds	r24, 0x200B
+     d76:	8a 83       	std	Y+2, r24	; 0x02
+         ((uint8_t*)arg)[3] = WIZCHIP.id[3];
+     d78:	80 91 0c 20 	lds	r24, 0x200C
+     d7c:	8b 83       	std	Y+3, r24	; 0x03
+         ((uint8_t*)arg)[4] = WIZCHIP.id[4];
+     d7e:	80 91 0d 20 	lds	r24, 0x200D
+     d82:	8c 83       	std	Y+4, r24	; 0x04
+         ((uint8_t*)arg)[5] = 0;
+     d84:	1d 82       	std	Y+5, r1	; 0x05
+     d86:	15 c0       	rjmp	.+42     	; 0xdb2 <ctlwizchip+0xe2>
+         break;
+   #if _WIZCHIP_ ==  5500
+      case CW_RESET_PHY:
+         wizphy_reset();
+     d88:	17 df       	rcall	.-466    	; 0xbb8 <wizphy_reset>
+     d8a:	13 c0       	rjmp	.+38     	; 0xdb2 <ctlwizchip+0xe2>
+         break;
+      case CW_SET_PHYCONF:
+         wizphy_setphyconf((wiz_PhyConf*)arg);
+     d8c:	cb 01       	movw	r24, r22
+     d8e:	2c df       	rcall	.-424    	; 0xbe8 <wizphy_setphyconf>
+     d90:	10 c0       	rjmp	.+32     	; 0xdb2 <ctlwizchip+0xe2>
+         break;
+      case CW_GET_PHYCONF:
+         wizphy_getphyconf((wiz_PhyConf*)arg);
+     d92:	cb 01       	movw	r24, r22
+     d94:	48 df       	rcall	.-368    	; 0xc26 <wizphy_getphyconf>
+     d96:	0d c0       	rjmp	.+26     	; 0xdb2 <ctlwizchip+0xe2>
+         break;
+      case CW_GET_PHYSTATUS:
+         break;
+      case CW_SET_PHYPOWMODE:
+         return wizphy_setphypmode(*(uint8_t*)arg);
+     d98:	88 81       	ld	r24, Y
+         break;
+      default:
+         return -1;
+   }
+   return 0;
+}
+     d9a:	df 91       	pop	r29
+     d9c:	cf 91       	pop	r28
+     d9e:	1f 91       	pop	r17
+         wizphy_getphyconf((wiz_PhyConf*)arg);
+         break;
+      case CW_GET_PHYSTATUS:
+         break;
+      case CW_SET_PHYPOWMODE:
+         return wizphy_setphypmode(*(uint8_t*)arg);
+     da0:	6e cf       	rjmp	.-292    	; 0xc7e <wizphy_setphypmode>
+   #endif
+      case CW_GET_PHYPOWMODE:
+         tmp = wizphy_getphypmode();
+     da2:	ff de       	rcall	.-514    	; 0xba2 <wizphy_getphypmode>
+         if((int8_t)tmp == -1) return -1;
+     da4:	8f 3f       	cpi	r24, 0xFF	; 255
+     da6:	21 f4       	brne	.+8      	; 0xdb0 <ctlwizchip+0xe0>
+     da8:	8f ef       	ldi	r24, 0xFF	; 255
+     daa:	04 c0       	rjmp	.+8      	; 0xdb4 <ctlwizchip+0xe4>
+         *(uint8_t*)arg = tmp;
+         break;
+      case CW_GET_PHYLINK:
+         tmp = wizphy_getphylink();
+     dac:	f3 de       	rcall	.-538    	; 0xb94 <wizphy_getphylink>
+     dae:	fa cf       	rjmp	.-12     	; 0xda4 <ctlwizchip+0xd4>
+         if((int8_t)tmp == -1) return -1;
+         *(uint8_t*)arg = tmp;
+     db0:	88 83       	st	Y, r24
+         break;
+      default:
+         return -1;
+   }
+   return 0;
+     db2:	80 e0       	ldi	r24, 0x00	; 0
+}
+     db4:	df 91       	pop	r29
+     db6:	cf 91       	pop	r28
+     db8:	1f 91       	pop	r17
+     dba:	08 95       	ret
+
+00000dbc <wizchip_setnetinfo>:
+}
+#endif
+
+
+void wizchip_setnetinfo(wiz_NetInfo* pnetinfo)
+{
+     dbc:	cf 93       	push	r28
+     dbe:	df 93       	push	r29
+     dc0:	ec 01       	movw	r28, r24
+   setSHAR(pnetinfo->mac);
+     dc2:	26 e0       	ldi	r18, 0x06	; 6
+     dc4:	30 e0       	ldi	r19, 0x00	; 0
+     dc6:	ac 01       	movw	r20, r24
+     dc8:	60 e0       	ldi	r22, 0x00	; 0
+     dca:	79 e0       	ldi	r23, 0x09	; 9
+     dcc:	80 e0       	ldi	r24, 0x00	; 0
+     dce:	90 e0       	ldi	r25, 0x00	; 0
+     dd0:	3d dd       	rcall	.-1414   	; 0x84c <WIZCHIP_WRITE_BUF>
+   setGAR(pnetinfo->gw);
+     dd2:	ae 01       	movw	r20, r28
+     dd4:	42 5f       	subi	r20, 0xF2	; 242
+     dd6:	5f 4f       	sbci	r21, 0xFF	; 255
+     dd8:	24 e0       	ldi	r18, 0x04	; 4
+     dda:	30 e0       	ldi	r19, 0x00	; 0
+     ddc:	60 e0       	ldi	r22, 0x00	; 0
+     dde:	71 e0       	ldi	r23, 0x01	; 1
+     de0:	80 e0       	ldi	r24, 0x00	; 0
+     de2:	90 e0       	ldi	r25, 0x00	; 0
+     de4:	33 dd       	rcall	.-1434   	; 0x84c <WIZCHIP_WRITE_BUF>
+   setSUBR(pnetinfo->sn);
+     de6:	ae 01       	movw	r20, r28
+     de8:	46 5f       	subi	r20, 0xF6	; 246
+     dea:	5f 4f       	sbci	r21, 0xFF	; 255
+     dec:	24 e0       	ldi	r18, 0x04	; 4
+     dee:	30 e0       	ldi	r19, 0x00	; 0
+     df0:	60 e0       	ldi	r22, 0x00	; 0
+     df2:	75 e0       	ldi	r23, 0x05	; 5
+     df4:	80 e0       	ldi	r24, 0x00	; 0
+     df6:	90 e0       	ldi	r25, 0x00	; 0
+     df8:	29 dd       	rcall	.-1454   	; 0x84c <WIZCHIP_WRITE_BUF>
+   setSIPR(pnetinfo->ip);
+     dfa:	ae 01       	movw	r20, r28
+     dfc:	4a 5f       	subi	r20, 0xFA	; 250
+     dfe:	5f 4f       	sbci	r21, 0xFF	; 255
+     e00:	24 e0       	ldi	r18, 0x04	; 4
+     e02:	30 e0       	ldi	r19, 0x00	; 0
+     e04:	60 e0       	ldi	r22, 0x00	; 0
+     e06:	7f e0       	ldi	r23, 0x0F	; 15
+     e08:	80 e0       	ldi	r24, 0x00	; 0
+     e0a:	90 e0       	ldi	r25, 0x00	; 0
+     e0c:	1f dd       	rcall	.-1474   	; 0x84c <WIZCHIP_WRITE_BUF>
+   _DNS_[0] = pnetinfo->dns[0];
+     e0e:	8a 89       	ldd	r24, Y+18	; 0x12
+     e10:	80 93 43 20 	sts	0x2043, r24
+   _DNS_[1] = pnetinfo->dns[1];
+     e14:	8b 89       	ldd	r24, Y+19	; 0x13
+     e16:	80 93 44 20 	sts	0x2044, r24
+   _DNS_[2] = pnetinfo->dns[2];
+     e1a:	8c 89       	ldd	r24, Y+20	; 0x14
+     e1c:	80 93 45 20 	sts	0x2045, r24
+   _DNS_[3] = pnetinfo->dns[3];
+     e20:	8d 89       	ldd	r24, Y+21	; 0x15
+     e22:	80 93 46 20 	sts	0x2046, r24
+   _DHCP_   = pnetinfo->dhcp;
+     e26:	8e 89       	ldd	r24, Y+22	; 0x16
+     e28:	80 93 42 20 	sts	0x2042, r24
+}
+     e2c:	df 91       	pop	r29
+     e2e:	cf 91       	pop	r28
+     e30:	08 95       	ret
+
+00000e32 <wizchip_getnetinfo>:
+
+void wizchip_getnetinfo(wiz_NetInfo* pnetinfo)
+{
+     e32:	cf 93       	push	r28
+     e34:	df 93       	push	r29
+     e36:	ec 01       	movw	r28, r24
+   getSHAR(pnetinfo->mac);
+     e38:	26 e0       	ldi	r18, 0x06	; 6
+     e3a:	30 e0       	ldi	r19, 0x00	; 0
+     e3c:	ac 01       	movw	r20, r24
+     e3e:	60 e0       	ldi	r22, 0x00	; 0
+     e40:	79 e0       	ldi	r23, 0x09	; 9
+     e42:	80 e0       	ldi	r24, 0x00	; 0
+     e44:	90 e0       	ldi	r25, 0x00	; 0
+     e46:	ae dc       	rcall	.-1700   	; 0x7a4 <WIZCHIP_READ_BUF>
+   getGAR(pnetinfo->gw);
+     e48:	ae 01       	movw	r20, r28
+     e4a:	42 5f       	subi	r20, 0xF2	; 242
+     e4c:	5f 4f       	sbci	r21, 0xFF	; 255
+     e4e:	24 e0       	ldi	r18, 0x04	; 4
+     e50:	30 e0       	ldi	r19, 0x00	; 0
+     e52:	60 e0       	ldi	r22, 0x00	; 0
+     e54:	71 e0       	ldi	r23, 0x01	; 1
+     e56:	80 e0       	ldi	r24, 0x00	; 0
+     e58:	90 e0       	ldi	r25, 0x00	; 0
+     e5a:	a4 dc       	rcall	.-1720   	; 0x7a4 <WIZCHIP_READ_BUF>
+   getSUBR(pnetinfo->sn);
+     e5c:	ae 01       	movw	r20, r28
+     e5e:	46 5f       	subi	r20, 0xF6	; 246
+     e60:	5f 4f       	sbci	r21, 0xFF	; 255
+     e62:	24 e0       	ldi	r18, 0x04	; 4
+     e64:	30 e0       	ldi	r19, 0x00	; 0
+     e66:	60 e0       	ldi	r22, 0x00	; 0
+     e68:	75 e0       	ldi	r23, 0x05	; 5
+     e6a:	80 e0       	ldi	r24, 0x00	; 0
+     e6c:	90 e0       	ldi	r25, 0x00	; 0
+     e6e:	9a dc       	rcall	.-1740   	; 0x7a4 <WIZCHIP_READ_BUF>
+   getSIPR(pnetinfo->ip);
+     e70:	ae 01       	movw	r20, r28
+     e72:	4a 5f       	subi	r20, 0xFA	; 250
+     e74:	5f 4f       	sbci	r21, 0xFF	; 255
+     e76:	24 e0       	ldi	r18, 0x04	; 4
+     e78:	30 e0       	ldi	r19, 0x00	; 0
+     e7a:	60 e0       	ldi	r22, 0x00	; 0
+     e7c:	7f e0       	ldi	r23, 0x0F	; 15
+     e7e:	80 e0       	ldi	r24, 0x00	; 0
+     e80:	90 e0       	ldi	r25, 0x00	; 0
+     e82:	90 dc       	rcall	.-1760   	; 0x7a4 <WIZCHIP_READ_BUF>
+   pnetinfo->dns[0]= _DNS_[0];
+     e84:	80 91 43 20 	lds	r24, 0x2043
+     e88:	8a 8b       	std	Y+18, r24	; 0x12
+   pnetinfo->dns[1]= _DNS_[1];
+     e8a:	80 91 44 20 	lds	r24, 0x2044
+     e8e:	8b 8b       	std	Y+19, r24	; 0x13
+   pnetinfo->dns[2]= _DNS_[2];
+     e90:	80 91 45 20 	lds	r24, 0x2045
+     e94:	8c 8b       	std	Y+20, r24	; 0x14
+   pnetinfo->dns[3]= _DNS_[3];
+     e96:	80 91 46 20 	lds	r24, 0x2046
+     e9a:	8d 8b       	std	Y+21, r24	; 0x15
+   pnetinfo->dhcp  = _DHCP_;
+     e9c:	80 91 42 20 	lds	r24, 0x2042
+     ea0:	8e 8b       	std	Y+22, r24	; 0x16
+}
+     ea2:	df 91       	pop	r29
+     ea4:	cf 91       	pop	r28
+     ea6:	08 95       	ret
+
+00000ea8 <wizchip_setnetmode>:
+
+int8_t wizchip_setnetmode(netmode_type netmode)
+{
+     ea8:	cf 93       	push	r28
+     eaa:	c8 2f       	mov	r28, r24
+   uint8_t tmp = 0;
+#if _WIZCHIP_ != 5500   
+   if(netmode & ~(NM_WAKEONLAN | NM_PPPOE | NM_PINGBLOCK)) return -1;
+#else
+   if(netmode & ~(NM_WAKEONLAN | NM_PPPOE | NM_PINGBLOCK | NM_FORCEARP)) return -1;
+     eac:	85 7c       	andi	r24, 0xC5	; 197
+     eae:	61 f4       	brne	.+24     	; 0xec8 <wizchip_setnetmode+0x20>
+#endif      
+   tmp = getMR();
+     eb0:	60 e0       	ldi	r22, 0x00	; 0
+     eb2:	70 e0       	ldi	r23, 0x00	; 0
+     eb4:	cb 01       	movw	r24, r22
+     eb6:	f4 db       	rcall	.-2072   	; 0x6a0 <WIZCHIP_READ>
+   tmp |= (uint8_t)netmode;
+     eb8:	48 2f       	mov	r20, r24
+     eba:	4c 2b       	or	r20, r28
+   setMR(tmp);
+     ebc:	60 e0       	ldi	r22, 0x00	; 0
+     ebe:	70 e0       	ldi	r23, 0x00	; 0
+     ec0:	cb 01       	movw	r24, r22
+     ec2:	2f dc       	rcall	.-1954   	; 0x722 <WIZCHIP_WRITE>
+   return 0;
+     ec4:	80 e0       	ldi	r24, 0x00	; 0
+     ec6:	01 c0       	rjmp	.+2      	; 0xeca <wizchip_setnetmode+0x22>
+{
+   uint8_t tmp = 0;
+#if _WIZCHIP_ != 5500   
+   if(netmode & ~(NM_WAKEONLAN | NM_PPPOE | NM_PINGBLOCK)) return -1;
+#else
+   if(netmode & ~(NM_WAKEONLAN | NM_PPPOE | NM_PINGBLOCK | NM_FORCEARP)) return -1;
+     ec8:	8f ef       	ldi	r24, 0xFF	; 255
+#endif      
+   tmp = getMR();
+   tmp |= (uint8_t)netmode;
+   setMR(tmp);
+   return 0;
+}
+     eca:	cf 91       	pop	r28
+     ecc:	08 95       	ret
+
+00000ece <wizchip_getnetmode>:
+
+netmode_type wizchip_getnetmode(void)
+{
+   return (netmode_type) getMR();
+     ece:	60 e0       	ldi	r22, 0x00	; 0
+     ed0:	70 e0       	ldi	r23, 0x00	; 0
+     ed2:	cb 01       	movw	r24, r22
+     ed4:	e5 cb       	rjmp	.-2102   	; 0x6a0 <WIZCHIP_READ>
+
+00000ed6 <wizchip_settimeout>:
+}
+
+void wizchip_settimeout(wiz_NetTimeout* nettime)
+{
+     ed6:	cf 93       	push	r28
+     ed8:	df 93       	push	r29
+     eda:	ec 01       	movw	r28, r24
+   setRCR(nettime->retry_cnt);
+     edc:	48 81       	ld	r20, Y
+     ede:	60 e0       	ldi	r22, 0x00	; 0
+     ee0:	7b e1       	ldi	r23, 0x1B	; 27
+     ee2:	80 e0       	ldi	r24, 0x00	; 0
+     ee4:	90 e0       	ldi	r25, 0x00	; 0
+     ee6:	1d dc       	rcall	.-1990   	; 0x722 <WIZCHIP_WRITE>
+   setRTR(nettime->time_100us);
+     ee8:	4a 81       	ldd	r20, Y+2	; 0x02
+     eea:	60 e0       	ldi	r22, 0x00	; 0
+     eec:	79 e1       	ldi	r23, 0x19	; 25
+     eee:	80 e0       	ldi	r24, 0x00	; 0
+     ef0:	90 e0       	ldi	r25, 0x00	; 0
+     ef2:	17 dc       	rcall	.-2002   	; 0x722 <WIZCHIP_WRITE>
+     ef4:	49 81       	ldd	r20, Y+1	; 0x01
+     ef6:	60 e0       	ldi	r22, 0x00	; 0
+     ef8:	7a e1       	ldi	r23, 0x1A	; 26
+     efa:	80 e0       	ldi	r24, 0x00	; 0
+     efc:	90 e0       	ldi	r25, 0x00	; 0
+}
+     efe:	df 91       	pop	r29
+     f00:	cf 91       	pop	r28
+}
+
+void wizchip_settimeout(wiz_NetTimeout* nettime)
+{
+   setRCR(nettime->retry_cnt);
+   setRTR(nettime->time_100us);
+     f02:	0f cc       	rjmp	.-2018   	; 0x722 <WIZCHIP_WRITE>
+
+00000f04 <wizchip_gettimeout>:
+}
+
+void wizchip_gettimeout(wiz_NetTimeout* nettime)
+{
+     f04:	1f 93       	push	r17
+     f06:	cf 93       	push	r28
+     f08:	df 93       	push	r29
+     f0a:	ec 01       	movw	r28, r24
+   nettime->retry_cnt = getRCR();
+     f0c:	60 e0       	ldi	r22, 0x00	; 0
+     f0e:	7b e1       	ldi	r23, 0x1B	; 27
+     f10:	80 e0       	ldi	r24, 0x00	; 0
+     f12:	90 e0       	ldi	r25, 0x00	; 0
+     f14:	c5 db       	rcall	.-2166   	; 0x6a0 <WIZCHIP_READ>
+     f16:	88 83       	st	Y, r24
+   nettime->time_100us = getRTR();
+     f18:	60 e0       	ldi	r22, 0x00	; 0
+     f1a:	79 e1       	ldi	r23, 0x19	; 25
+     f1c:	80 e0       	ldi	r24, 0x00	; 0
+     f1e:	90 e0       	ldi	r25, 0x00	; 0
+     f20:	bf db       	rcall	.-2178   	; 0x6a0 <WIZCHIP_READ>
+     f22:	18 2f       	mov	r17, r24
+     f24:	60 e0       	ldi	r22, 0x00	; 0
+     f26:	7a e1       	ldi	r23, 0x1A	; 26
+     f28:	80 e0       	ldi	r24, 0x00	; 0
+     f2a:	90 e0       	ldi	r25, 0x00	; 0
+     f2c:	b9 db       	rcall	.-2190   	; 0x6a0 <WIZCHIP_READ>
+     f2e:	21 2f       	mov	r18, r17
+     f30:	30 e0       	ldi	r19, 0x00	; 0
+     f32:	32 2f       	mov	r19, r18
+     f34:	22 27       	eor	r18, r18
+     f36:	28 0f       	add	r18, r24
+     f38:	31 1d       	adc	r19, r1
+     f3a:	29 83       	std	Y+1, r18	; 0x01
+     f3c:	3a 83       	std	Y+2, r19	; 0x02
+}
+     f3e:	df 91       	pop	r29
+     f40:	cf 91       	pop	r28
+     f42:	1f 91       	pop	r17
+     f44:	08 95       	ret
+
+00000f46 <ctlnetwork>:
+   return 0;
+}
+
+
+int8_t ctlnetwork(ctlnetwork_type cntype, void* arg)
+{
+     f46:	cf 93       	push	r28
+     f48:	df 93       	push	r29
+     f4a:	eb 01       	movw	r28, r22
+   
+   switch(cntype)
+     f4c:	82 30       	cpi	r24, 0x02	; 2
+     f4e:	99 f0       	breq	.+38     	; 0xf76 <ctlnetwork+0x30>
+     f50:	38 f4       	brcc	.+14     	; 0xf60 <ctlnetwork+0x1a>
+     f52:	88 23       	and	r24, r24
+     f54:	69 f0       	breq	.+26     	; 0xf70 <ctlnetwork+0x2a>
+     f56:	81 30       	cpi	r24, 0x01	; 1
+     f58:	c9 f4       	brne	.+50     	; 0xf8c <ctlnetwork+0x46>
+   {
+      case CN_SET_NETINFO:
+         wizchip_setnetinfo((wiz_NetInfo*)arg);
+         break;
+      case CN_GET_NETINFO:
+         wizchip_getnetinfo((wiz_NetInfo*)arg);
+     f5a:	cb 01       	movw	r24, r22
+     f5c:	6a df       	rcall	.-300    	; 0xe32 <wizchip_getnetinfo>
+     f5e:	14 c0       	rjmp	.+40     	; 0xf88 <ctlnetwork+0x42>
+
+
+int8_t ctlnetwork(ctlnetwork_type cntype, void* arg)
+{
+   
+   switch(cntype)
+     f60:	84 30       	cpi	r24, 0x04	; 4
+     f62:	81 f0       	breq	.+32     	; 0xf84 <ctlnetwork+0x3e>
+     f64:	60 f0       	brcs	.+24     	; 0xf7e <ctlnetwork+0x38>
+     f66:	85 30       	cpi	r24, 0x05	; 5
+     f68:	89 f4       	brne	.+34     	; 0xf8c <ctlnetwork+0x46>
+         break;
+      case CN_SET_TIMEOUT:
+         wizchip_settimeout((wiz_NetTimeout*)arg);
+         break;
+      case CN_GET_TIMEOUT:
+         wizchip_gettimeout((wiz_NetTimeout*)arg);
+     f6a:	cb 01       	movw	r24, r22
+     f6c:	cb df       	rcall	.-106    	; 0xf04 <wizchip_gettimeout>
+     f6e:	0c c0       	rjmp	.+24     	; 0xf88 <ctlnetwork+0x42>
+{
+   
+   switch(cntype)
+   {
+      case CN_SET_NETINFO:
+         wizchip_setnetinfo((wiz_NetInfo*)arg);
+     f70:	cb 01       	movw	r24, r22
+     f72:	24 df       	rcall	.-440    	; 0xdbc <wizchip_setnetinfo>
+     f74:	09 c0       	rjmp	.+18     	; 0xf88 <ctlnetwork+0x42>
+         break;
+      case CN_GET_NETINFO:
+         wizchip_getnetinfo((wiz_NetInfo*)arg);
+         break;
+      case CN_SET_NETMODE:
+         return wizchip_setnetmode(*(netmode_type*)arg);
+     f76:	88 81       	ld	r24, Y
+         break;
+      default:
+         return -1;
+   }
+   return 0;
+}
+     f78:	df 91       	pop	r29
+     f7a:	cf 91       	pop	r28
+         break;
+      case CN_GET_NETINFO:
+         wizchip_getnetinfo((wiz_NetInfo*)arg);
+         break;
+      case CN_SET_NETMODE:
+         return wizchip_setnetmode(*(netmode_type*)arg);
+     f7c:	95 cf       	rjmp	.-214    	; 0xea8 <wizchip_setnetmode>
+      case CN_GET_NETMODE:
+         *(netmode_type*)arg = wizchip_getnetmode();
+     f7e:	a7 df       	rcall	.-178    	; 0xece <wizchip_getnetmode>
+     f80:	88 83       	st	Y, r24
+     f82:	02 c0       	rjmp	.+4      	; 0xf88 <ctlnetwork+0x42>
+         break;
+      case CN_SET_TIMEOUT:
+         wizchip_settimeout((wiz_NetTimeout*)arg);
+     f84:	cb 01       	movw	r24, r22
+     f86:	a7 df       	rcall	.-178    	; 0xed6 <wizchip_settimeout>
+         wizchip_gettimeout((wiz_NetTimeout*)arg);
+         break;
+      default:
+         return -1;
+   }
+   return 0;
+     f88:	80 e0       	ldi	r24, 0x00	; 0
+      case CN_GET_NETMODE:
+         *(netmode_type*)arg = wizchip_getnetmode();
+         break;
+      case CN_SET_TIMEOUT:
+         wizchip_settimeout((wiz_NetTimeout*)arg);
+         break;
+     f8a:	01 c0       	rjmp	.+2      	; 0xf8e <ctlnetwork+0x48>
+      case CN_GET_TIMEOUT:
+         wizchip_gettimeout((wiz_NetTimeout*)arg);
+         break;
+      default:
+         return -1;
+     f8c:	8f ef       	ldi	r24, 0xFF	; 255
+   }
+   return 0;
+}
+     f8e:	df 91       	pop	r29
+     f90:	cf 91       	pop	r28
+     f92:	08 95       	ret
+
+00000f94 <sysclk_init>:
+#endif
+	bool need_rc2mhz = false;
+
+	/* Turn off all peripheral clocks that can be turned off. */
+	for (i = 0; i <= SYSCLK_PORT_F; i++) {
+		*(reg++) = 0xff;
+     f94:	8f ef       	ldi	r24, 0xFF	; 255
+     f96:	80 93 70 00 	sts	0x0070, r24
+     f9a:	80 93 71 00 	sts	0x0071, r24
+     f9e:	80 93 72 00 	sts	0x0072, r24
+     fa2:	80 93 73 00 	sts	0x0073, r24
+     fa6:	80 93 74 00 	sts	0x0074, r24
+     faa:	80 93 75 00 	sts	0x0075, r24
+     fae:	80 93 76 00 	sts	0x0076, r24
+
+typedef uint8_t irqflags_t;
+
+static inline irqflags_t cpu_irq_save(void)
+{
+	irqflags_t flags = SREG;
+     fb2:	9f b7       	in	r25, 0x3f	; 63
+	cpu_irq_disable();
+     fb4:	f8 94       	cli
+	irqflags_t flags;
+
+	Assert(id != OSC_ID_USBSOF);
+
+	flags = cpu_irq_save();
+	OSC.CTRL |= id;
+     fb6:	80 91 50 00 	lds	r24, 0x0050
+     fba:	82 60       	ori	r24, 0x02	; 2
+     fbc:	80 93 50 00 	sts	0x0050, r24
+}
+
+static inline void cpu_irq_restore(irqflags_t flags)
+{
+	barrier();
+	SREG = flags;
+     fc0:	9f bf       	out	0x3f, r25	; 63
+
+static inline bool osc_is_ready(uint8_t id)
+{
+	Assert(id != OSC_ID_USBSOF);
+
+	return OSC.STATUS & id;
+     fc2:	80 91 51 00 	lds	r24, 0x0051
+ *
+ * \param id A number identifying the oscillator to wait for.
+ */
+static inline void osc_wait_ready(uint8_t id)
+{
+	while (!osc_is_ready(id)) {
+     fc6:	81 ff       	sbrs	r24, 1
+     fc8:	fc cf       	rjmp	.-8      	; 0xfc2 <sysclk_init+0x2e>
+		default:
+			//unhandled_case(CONFIG_SYSCLK_SOURCE);
+			return;
+		}
+
+		ccp_write_io((uint8_t *)&CLK.CTRL, CONFIG_SYSCLK_SOURCE);
+     fca:	61 e0       	ldi	r22, 0x01	; 1
+     fcc:	80 e4       	ldi	r24, 0x40	; 64
+     fce:	90 e0       	ldi	r25, 0x00	; 0
+     fd0:	15 d0       	rcall	.+42     	; 0xffc <ccp_write_io>
+
+typedef uint8_t irqflags_t;
+
+static inline irqflags_t cpu_irq_save(void)
+{
+	irqflags_t flags = SREG;
+     fd2:	9f b7       	in	r25, 0x3f	; 63
+	cpu_irq_disable();
+     fd4:	f8 94       	cli
+	irqflags_t flags;
+
+	Assert(id != OSC_ID_USBSOF);
+
+	flags = cpu_irq_save();
+	OSC.CTRL &= ~id;
+     fd6:	80 91 50 00 	lds	r24, 0x0050
+     fda:	8e 7f       	andi	r24, 0xFE	; 254
+     fdc:	80 93 50 00 	sts	0x0050, r24
+}
+
+static inline void cpu_irq_restore(irqflags_t flags)
+{
+	barrier();
+	SREG = flags;
+     fe0:	9f bf       	out	0x3f, r25	; 63
+     fe2:	08 95       	ret
+
+00000fe4 <sysclk_enable_module>:
+
+typedef uint8_t irqflags_t;
+
+static inline irqflags_t cpu_irq_save(void)
+{
+	irqflags_t flags = SREG;
+     fe4:	9f b7       	in	r25, 0x3f	; 63
+	cpu_irq_disable();
+     fe6:	f8 94       	cli
+
+void sysclk_enable_module(enum sysclk_port_id port, uint8_t id)
+{
+	irqflags_t flags = cpu_irq_save();
+
+	*((uint8_t *)&PR.PRGEN + port) &= ~id;
+     fe8:	e8 2f       	mov	r30, r24
+     fea:	f0 e0       	ldi	r31, 0x00	; 0
+     fec:	e0 59       	subi	r30, 0x90	; 144
+     fee:	ff 4f       	sbci	r31, 0xFF	; 255
+     ff0:	60 95       	com	r22
+     ff2:	80 81       	ld	r24, Z
+     ff4:	86 23       	and	r24, r22
+     ff6:	80 83       	st	Z, r24
+}
+
+static inline void cpu_irq_restore(irqflags_t flags)
+{
+	barrier();
+	SREG = flags;
+     ff8:	9f bf       	out	0x3f, r25	; 63
+     ffa:	08 95       	ret
+
+00000ffc <ccp_write_io>:
+
+	PUBLIC_FUNCTION(ccp_write_io)
+
+#if defined(__GNUC__)
+
+	out     RAMPZ, r1               // Reset bits 23:16 of Z
+     ffc:	1b be       	out	0x3b, r1	; 59
+	movw    r30, r24                // Load addr into Z
+     ffe:	fc 01       	movw	r30, r24
+	ldi     r18, CCP_IOREG          // Load magic CCP value
+    1000:	28 ed       	ldi	r18, 0xD8	; 216
+	out     CCP, r18                // Start CCP handshake
+    1002:	24 bf       	out	0x34, r18	; 52
+	st      Z, r22                  // Write value to I/O register
+    1004:	60 83       	st	Z, r22
+	ret                             // Return to caller
+    1006:	08 95       	ret
+
+00001008 <board_init>:
+
+void board_init(void)
+{
+	// LED ein:
+	 
+	PORTA.OUTCLR = PIN5_bm;
+    1008:	e0 e0       	ldi	r30, 0x00	; 0
+    100a:	f6 e0       	ldi	r31, 0x06	; 6
+    100c:	80 e2       	ldi	r24, 0x20	; 32
+    100e:	86 83       	std	Z+6, r24	; 0x06
+	PORTA.DIRSET = PIN5_bm;
+    1010:	81 83       	std	Z+1, r24	; 0x01
+	
+	// Pullups der Config-Jumper ein:
+	PORTD.OUTSET = (PIN0_bm | PIN1_bm | PIN2_bm | PIN3_bm);
+    1012:	8f e0       	ldi	r24, 0x0F	; 15
+    1014:	e0 e6       	ldi	r30, 0x60	; 96
+    1016:	f6 e0       	ldi	r31, 0x06	; 6
+    1018:	85 83       	std	Z+5, r24	; 0x05
+    101a:	08 95       	ret
+
+0000101c <__udivmodsi4>:
+    101c:	a1 e2       	ldi	r26, 0x21	; 33
+    101e:	1a 2e       	mov	r1, r26
+    1020:	aa 1b       	sub	r26, r26
+    1022:	bb 1b       	sub	r27, r27
+    1024:	fd 01       	movw	r30, r26
+    1026:	0d c0       	rjmp	.+26     	; 0x1042 <__udivmodsi4_ep>
+
+00001028 <__udivmodsi4_loop>:
+    1028:	aa 1f       	adc	r26, r26
+    102a:	bb 1f       	adc	r27, r27
+    102c:	ee 1f       	adc	r30, r30
+    102e:	ff 1f       	adc	r31, r31
+    1030:	a2 17       	cp	r26, r18
+    1032:	b3 07       	cpc	r27, r19
+    1034:	e4 07       	cpc	r30, r20
+    1036:	f5 07       	cpc	r31, r21
+    1038:	20 f0       	brcs	.+8      	; 0x1042 <__udivmodsi4_ep>
+    103a:	a2 1b       	sub	r26, r18
+    103c:	b3 0b       	sbc	r27, r19
+    103e:	e4 0b       	sbc	r30, r20
+    1040:	f5 0b       	sbc	r31, r21
+
+00001042 <__udivmodsi4_ep>:
+    1042:	66 1f       	adc	r22, r22
+    1044:	77 1f       	adc	r23, r23
+    1046:	88 1f       	adc	r24, r24
+    1048:	99 1f       	adc	r25, r25
+    104a:	1a 94       	dec	r1
+    104c:	69 f7       	brne	.-38     	; 0x1028 <__udivmodsi4_loop>
+    104e:	60 95       	com	r22
+    1050:	70 95       	com	r23
+    1052:	80 95       	com	r24
+    1054:	90 95       	com	r25
+    1056:	9b 01       	movw	r18, r22
+    1058:	ac 01       	movw	r20, r24
+    105a:	bd 01       	movw	r22, r26
+    105c:	cf 01       	movw	r24, r30
+    105e:	08 95       	ret
+
+00001060 <__tablejump2__>:
+    1060:	ee 0f       	add	r30, r30
+    1062:	ff 1f       	adc	r31, r31
+
+00001064 <__tablejump__>:
+    1064:	05 90       	lpm	r0, Z+
+    1066:	f4 91       	lpm	r31, Z
+    1068:	e0 2d       	mov	r30, r0
+    106a:	09 94       	ijmp
+
+0000106c <_exit>:
+    106c:	f8 94       	cli
+
+0000106e <__stop_program>:
+    106e:	ff cf       	rjmp	.-2      	; 0x106e <__stop_program>
